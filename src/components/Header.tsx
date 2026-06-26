@@ -1,5 +1,6 @@
 import React from 'react';
 import { Search, Flower, Clock, MapPin, Sparkles, Filter, SlidersHorizontal, Eye, EyeOff } from 'lucide-react';
+import Logo from './Logo';
 
 interface HeaderProps {
   searchQuery: string;
@@ -68,11 +69,14 @@ export default function Header({
               Catálogo de Flores Premium
             </span>
           </div>
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white font-semibold tracking-wide flex items-center gap-3">
-            Mi Amor <span className="text-rose-300 italic font-normal">Floricultura</span>
-          </h1>
-          <p className="text-rose-100/90 font-sans text-sm md:text-base max-w-2xl mt-2 font-light">
-            Especialistas em criar momentos inesquecíveis. Buquês exclusivos, cestas luxuosas de café e chocolates, e arranjos repletos de sentimento.
+          <div className="flex items-center gap-4 flex-wrap">
+            <Logo size="md" showText={false} className="shadow-lg rounded-full" />
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white font-semibold tracking-wide">
+              Mi Amor <span className="text-rose-300 italic font-normal">Floricultura</span>
+            </h1>
+          </div>
+          <p className="text-rose-100/90 font-sans text-sm md:text-base max-w-2xl mt-3 font-light">
+            Especialistas em criar momentos inesquecíveis. Buquês exclusivos, cestas luxuosas de presentes e chocolates, e arranjos repletos de sentimento.
           </p>
         </div>
       </div>

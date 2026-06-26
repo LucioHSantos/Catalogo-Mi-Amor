@@ -4,6 +4,7 @@ import Header from './components/Header';
 import ProductCard from './components/ProductCard';
 import ProductModal from './components/ProductModal';
 import CartDrawer from './components/CartDrawer';
+import Logo from './components/Logo';
 import { CATALOG } from './data';
 import { Product, CartItem } from './types';
 
@@ -155,7 +156,7 @@ export default function App() {
       {/* Top micro announcement bar */}
       <div className="bg-rose-600 text-white py-1.5 px-4 text-center text-[11px] md:text-xs font-semibold tracking-wider flex items-center justify-center gap-1.5 shadow-sm">
         <Sparkles className="w-3.5 h-3.5 animate-bounce" />
-        <span>FAÇA SUA ENCOMENDA DIRETO PELO WHATSAPP • CARTÃO DE PRESENTE DE BRINDE 🌸</span>
+        <span>FAÇA SUA ENCOMENDA DIRETO PELO WHATSAPP 🌸</span>
       </div>
 
       {/* Header View */}
@@ -248,12 +249,15 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             {/* Column 1: Brand & Bio */}
-            <div>
-              <h3 className="font-serif text-2xl font-bold text-white tracking-wide">
-                Mi Amor <span className="text-rose-300 italic font-normal">Floricultura</span>
-              </h3>
-              <p className="text-xs text-rose-200/75 mt-3 leading-relaxed font-light">
-                Levando amor, alegria e sofisticação em forma de arranjos florais únicos e cestas premium para café da manhã ou datas comemorativas. Cada detalhe é feito com o coração.
+            <div className="flex flex-col items-start gap-4">
+              <div className="flex items-center gap-3">
+                <Logo size="sm" showText={false} className="shadow-md rounded-full bg-white/10 p-0.5 border border-white/20" />
+                <h3 className="font-serif text-2xl font-bold text-white tracking-wide">
+                  Mi Amor <span className="text-rose-300 italic font-normal">Floricultura</span>
+                </h3>
+              </div>
+              <p className="text-xs text-rose-200/75 leading-relaxed font-light">
+                Levando amor, alegria e sofisticação em forma de arranjos florais únicos e cestas premium de presentes ou datas comemorativas. Cada detalhe é feito com o coração.
               </p>
               <div className="flex items-center gap-3 mt-5 text-rose-300">
                 <span className="text-xs font-bold uppercase tracking-wider text-white">Siga-nos:</span>
