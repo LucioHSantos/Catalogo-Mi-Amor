@@ -1,0 +1,6 @@
+{
+  "name": "Mi Amor Floricultura",
+  "description": "Catálogo de buquês e cestas especiais da Mi Amor Floricultura. Faça seu pedido de forma simples e rápida com envio direto para o WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
