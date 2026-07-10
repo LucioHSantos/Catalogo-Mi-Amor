@@ -331,7 +331,7 @@ export const CATALOG: Product[] = [
     name: 'Cesta Com Amor',
     price: 359.90,
     category: 'cestas',
-    available: FontFaceSetLoadEvente,
+    available: false,
     tag: 'Sucesso de Vendas',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782482714/comamor_woytmw.png',
     description: 'Contém doces e chocolates selecionados deliciosos, bombons variados, Ferrero Rocher e um lindo arranjo de rosas incríveis para fechar a sua surpresa com chave de ouro.',
