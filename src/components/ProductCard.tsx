@@ -48,7 +48,7 @@ export default function ProductCard({
           {product.available ? (
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] md:text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 shadow-sm">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
-              Pronta Entrega
+              Entrega em até duas horas em Macaé
             </span>
           ) : (
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] md:text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200 shadow-sm">
@@ -111,12 +111,22 @@ export default function ProductCard({
 
         {/* Price & Actions Row */}
         <div>
-          <div className="flex items-baseline gap-2 mb-4">
+          <div className="flex flex-wrap items-baseline gap-1.5 mb-4">
+            {product.originalPrice && (
+              <span className="text-sm font-sans line-through text-zinc-400 mr-1">
+                {formatBRL(product.originalPrice)}
+              </span>
+            )}
             <span className="text-2xl font-bold font-sans text-rose-700">
               {formatBRL(product.price)}
             </span>
+            {product.originalPrice && (
+              <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-rose-100 text-rose-700 border border-rose-200 animate-pulse ml-1">
+                Economize {formatBRL(product.originalPrice - product.price)}!
+              </span>
+            )}
             {product.category === 'buques' && product.price > 180 && (
-              <span className="text-[10px] text-zinc-400">ou 3x de {formatBRL(product.price / 3)}</span>
+              <span className="text-[10px] text-zinc-400 ml-1">ou 3x de {formatBRL(product.price / 3)}</span>
             )}
           </div>
 

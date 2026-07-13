@@ -32,6 +32,12 @@ export default function CartDrawer({
 
   // Calculations
   const subtotal = cartItems.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
+  const totalSavings = cartItems.reduce((acc, item) => {
+    if (item.product.originalPrice) {
+      return acc + (item.product.originalPrice - item.product.price) * item.quantity;
+    }
+    return acc;
+  }, 0);
 
   const formatBRL = (value: number) => {
     return value.toLocaleString('pt-BR', {
@@ -161,9 +167,21 @@ export default function CartDrawer({
                             <h4 className="font-serif text-sm font-semibold text-rose-950 truncate">
                               {item.product.name}
                             </h4>
-                            <p className="text-xs text-rose-700 font-bold mt-0.5">
-                              {formatBRL(item.product.price)}
-                            </p>
+                            <div className="flex items-center gap-1.5 mt-0.5">
+                              {item.product.originalPrice && (
+                                <span className="text-[11px] text-zinc-400 line-through">
+                                  {formatBRL(item.product.originalPrice)}
+                                </span>
+                              )}
+                              <p className="text-xs text-rose-700 font-bold">
+                                {formatBRL(item.product.price)}
+                              </p>
+                              {item.product.originalPrice && (
+                                <span className="text-[9px] font-bold bg-rose-50 text-rose-600 px-1 rounded animate-pulse">
+                                  Promo
+                                </span>
+                              )}
+                            </div>
                             
                             {/* Quantity Counters */}
                             <div className="flex items-center gap-2 mt-2">
@@ -300,12 +318,18 @@ export default function CartDrawer({
 
                     <hr className="border-rose-100" />
 
-                    {/* Submit Invoice details summary */}
+                     {/* Submit Invoice details summary */}
                     <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
                       <div className="flex justify-between text-sm text-emerald-950 font-medium mb-1">
                         <span>Produtos:</span>
                         <span className="font-mono">{formatBRL(subtotal)}</span>
                       </div>
+                      {totalSavings > 0 && (
+                        <div className="flex justify-between text-xs text-rose-600 font-semibold mb-1">
+                          <span>Desconto Economizado:</span>
+                          <span className="font-mono">-{formatBRL(totalSavings)}</span>
+                        </div>
+                      )}
                       <div className="flex justify-between text-xs text-emerald-800 mb-3">
                         <span>Taxa de Entrega:</span>
                         <span className="italic">{deliveryType === 'delivery' ? 'A combinar' : 'Grátis (Retirada)'}</span>
@@ -314,6 +338,11 @@ export default function CartDrawer({
                         <span>Total Geral:</span>
                         <span className="font-sans text-lg text-emerald-800 font-extrabold">{formatBRL(subtotal)}</span>
                       </div>
+                      {totalSavings > 0 && (
+                        <div className="mt-2 text-[11px] text-center font-bold bg-rose-100 text-rose-700 py-1.5 rounded-lg border border-rose-200 animate-pulse">
+                          🎉 Incrível! Você economizou {formatBRL(totalSavings)} nessa compra!
+                        </div>
+                      )}
                     </div>
 
                     <button

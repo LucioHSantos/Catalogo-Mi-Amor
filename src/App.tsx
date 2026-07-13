@@ -86,7 +86,7 @@ export default function App() {
       currency: 'BRL',
     });
     
-    const availabilityBadge = product.available ? 'Pronta Entrega' : 'Sob Encomenda 🕒';
+    const availabilityBadge = product.available ? 'Entrega em até duas horas em Macaé' : 'Sob Encomenda 🕒';
     
     let optionText = '';
     if (product.images && selectedImage) {

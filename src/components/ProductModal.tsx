@@ -91,7 +91,7 @@ export default function ProductModal({
                 <div className="absolute top-4 left-4 flex flex-col gap-2">
                   {product.available ? (
                     <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500 text-white shadow-md">
-                      Pronta Entrega
+                      Entrega em até duas horas em Macaé
                     </span>
                   ) : (
                     <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500 text-white shadow-md">
@@ -164,13 +164,23 @@ export default function ProductModal({
                 </h2>
 
                 {/* Prices */}
-                <div className="flex items-baseline gap-3 mb-4">
+                <div className="flex flex-wrap items-baseline gap-3 mb-4">
+                  {product.originalPrice && (
+                    <span className="text-lg font-sans line-through text-zinc-400">
+                      {formatBRL(product.originalPrice * quantity)}
+                    </span>
+                  )}
                   <span className="text-3xl font-extrabold font-sans text-rose-700">
                     {formatBRL(product.price * quantity)}
                   </span>
                   {quantity > 1 && (
                     <span className="text-sm text-zinc-400">
                       ({formatBRL(product.price)} cada)
+                    </span>
+                  )}
+                  {product.originalPrice && (
+                    <span className="inline-flex items-center px-2 py-1 rounded bg-rose-100 text-rose-700 font-bold text-xs animate-pulse">
+                      Economize {formatBRL((product.originalPrice - product.price) * quantity)}!
                     </span>
                   )}
                 </div>
@@ -206,7 +216,7 @@ export default function ProductModal({
                     <p className="font-semibold">Informação de Entrega e Retirada</p>
                     <p className="font-light mt-0.5 leading-snug">
                       {product.available 
-                        ? 'Este item está disponível para retirada rápida ou entrega no mesmo dia. Consulte taxas e agendamentos.'
+                        ? 'Este item está disponível para retirada rápida ou entrega em até duas horas em Macaé. Consulte taxas e agendamentos.'
                         : 'Este item é sob encomenda prévia. O prazo padrão é de 24 horas. Para urgências, fale conosco pelo WhatsApp.'}
                     </p>
                   </div>
