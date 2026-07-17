@@ -22,17 +22,16 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-apaixonado',
     name: 'Buquê Apaixonado (12 Rosas)',
-    price: 149.90,
-    originalPrice: 199.90,
+    price: 199.90,
     category: 'buques',
     available: true,
-    tag: 'OFERTA IMPERDÍVEL 🔥',
+    tag: 'Mais Vendido',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480854/WhatsApp_Image_2026-06-08_at_15.09.51_1_wyseqq.jpg',
     description: 'Uma clássica e poderosa declaração de amor com 12 rosas vermelhas de altíssima qualidade, embaladas harmoniosamente em papel decorativo vermelho texturizado e finalizadas com um lindo laço.',
     details: [
       '12 Rosas vermelhas frescas de produtores selecionados',
       'Folhagens nobres de eucalipto',
-      'Papel celofane e papel decorativo vermelho coordenado',
+      'Papel celofane and papel decorativo vermelho coordenado',
       'Lindo laço de cetim volumoso com brilho',
       'Cartão de dedicatória para sua mensagem de amor'
     ]
@@ -40,11 +39,10 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-encantado',
     name: 'Buquê Encantado (6 Rosas)',
-    price: 99.90,
-    originalPrice: 159.90,
+    price: 159.90,
     category: 'buques',
     available: true,
-    tag: 'MEGA PROMOÇÃO ✨',
+    tag: 'Clássico',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782481543/Cat%C3%A1logo_de_Buqu%C3%AAs_1_tabpda.png',
     description: 'O encanto e delicadeza da simplicidade em um arranjo com 6 rosas vermelhas frescas e ramos de gipsofila, embalado com extremo requinte em papel celofane cristalino.',
     details: [
