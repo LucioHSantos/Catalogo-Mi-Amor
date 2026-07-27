@@ -12,7 +12,6 @@ export default function App() {
   // Primary Search and Filter States
   const [searchQuery, setSearchQuery] = React.useState('');
   const [selectedCategory, setSelectedCategory] = React.useState<'all' | 'buques' | 'cestas'>('all');
-  const [showUnavailable, setShowUnavailable] = React.useState(false); // Default false = Page 1 of PDF (show available only, or label unavailable)
   const [sortBy, setSortBy] = React.useState<'recommended' | 'price-asc' | 'price-desc'>('recommended');
   
   // WhatsApp Configuration (Fixed phone: 5522999301051 as requested)
@@ -112,21 +111,17 @@ export default function App() {
     window.open(`https://api.whatsapp.com/send?phone=${whatsAppNumber}&text=${encoded}`, '_blank', 'referrerPolicy=no-referrer');
   };
 
-  // Filter Catalog logic based on Category, Search query and Stock Availability
+  // Filter Catalog logic based on Category, Search query and Stock Availability (strictly only available items)
   const filteredProducts = React.useMemo(() => {
-    let result = [...CATALOG];
+    // Strictly filter out items marked as false (available === false)
+    let result = CATALOG.filter((p) => p.available === true);
 
     // 1. Filter by category
     if (selectedCategory !== 'all') {
       result = result.filter((p) => p.category === selectedCategory);
     }
 
-    // 2. Filter by availability (if showUnavailable is false, we filter out unavailable ones)
-    if (!showUnavailable) {
-      result = result.filter((p) => p.available);
-    }
-
-    // 3. Filter by search query (case-insensitive on name, description, details or tags)
+    // 2. Filter by search query (case-insensitive on name, description, details or tags)
     if (searchQuery.trim() !== '') {
       const q = searchQuery.toLowerCase();
       result = result.filter(
@@ -138,7 +133,7 @@ export default function App() {
       );
     }
 
-    // 4. Sort by criteria
+    // 3. Sort by criteria
     if (sortBy === 'price-asc') {
       result.sort((a, b) => a.price - b.price);
     } else if (sortBy === 'price-desc') {
@@ -146,7 +141,7 @@ export default function App() {
     }
 
     return result;
-  }, [selectedCategory, showUnavailable, searchQuery, sortBy]);
+  }, [selectedCategory, searchQuery, sortBy]);
 
   const totalCartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
@@ -165,8 +160,6 @@ export default function App() {
         setSearchQuery={setSearchQuery}
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
-        showUnavailable={showUnavailable}
-        setShowUnavailable={setShowUnavailable}
         sortBy={sortBy}
         setSortBy={setSortBy}
         whatsAppNumber={whatsAppNumber}
@@ -204,7 +197,6 @@ export default function App() {
                 onClick={() => {
                   setSearchQuery('');
                   setSelectedCategory('all');
-                  setShowUnavailable(true);
                 }}
                 className="bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition shadow-md"
               >

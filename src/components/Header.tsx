@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Flower, Clock, MapPin, Sparkles, Filter, SlidersHorizontal, Eye, EyeOff } from 'lucide-react';
+import { Search, Flower, Clock, MapPin, Sparkles, Filter, SlidersHorizontal } from 'lucide-react';
 import Logo from './Logo';
 
 interface HeaderProps {
@@ -7,8 +7,6 @@ interface HeaderProps {
   setSearchQuery: (query: string) => void;
   selectedCategory: 'all' | 'buques' | 'cestas';
   setSelectedCategory: (category: 'all' | 'buques' | 'cestas') => void;
-  showUnavailable: boolean;
-  setShowUnavailable: (show: boolean) => void;
   sortBy: 'recommended' | 'price-asc' | 'price-desc';
   setSortBy: (sort: 'recommended' | 'price-asc' | 'price-desc') => void;
   whatsAppNumber: string;
@@ -20,8 +18,6 @@ export default function Header({
   setSearchQuery,
   selectedCategory,
   setSelectedCategory,
-  showUnavailable,
-  setShowUnavailable,
   sortBy,
   setSortBy,
   whatsAppNumber,
@@ -173,35 +169,12 @@ export default function Header({
           </div>
         </div>
 
-        {/* Sorting and Availability Toggles */}
+        {/* Sorting and Info */}
         <div className="mt-4 pt-4 border-t border-rose-50 flex flex-wrap items-center justify-between gap-4 text-xs md:text-sm text-rose-950/80">
           <div className="flex flex-wrap items-center gap-4">
-            {/* Toggle Availability Filter */}
-            <button
-              onClick={() => setShowUnavailable(!showUnavailable)}
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full border transition duration-200 ${
-                showUnavailable
-                  ? 'bg-rose-50 text-rose-800 border-rose-200'
-                  : 'bg-emerald-50 text-emerald-800 border-emerald-200 font-medium'
-              }`}
-            >
-              {showUnavailable ? (
-                <>
-                  <Eye className="w-3.5 h-3.5 text-rose-600" />
-                  Mostrando: Todos os itens
-                </>
-              ) : (
-                <>
-                  <EyeOff className="w-3.5 h-3.5 text-emerald-600" />
-                  Mostrando: Apenas Disponíveis
-                </>
-              )}
-            </button>
-
-            {/* Explanatory Note */}
-            <span className="text-rose-500/80 text-xs flex items-center gap-1">
-              <span>💡</span>
-              Os itens sob encomenda possuem selo de "Encomenda Prévia".
+            <span className="inline-flex items-center gap-1.5 text-emerald-800 bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200 text-xs font-medium">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              Catálogo de Produtos Disponíveis
             </span>
           </div>
 
