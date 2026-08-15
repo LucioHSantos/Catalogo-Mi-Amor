@@ -64,31 +64,33 @@ export default function ProductModal({
         onClick={onClose}
       />
 
-      <div className="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
-        <div className="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-4xl max-w-full">
+      <div className="flex min-h-full items-center justify-center p-3 sm:p-6 text-center">
+        <div className="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all my-4 sm:my-8 w-full max-w-4xl max-h-[92vh] flex flex-col">
           
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-20 p-2 rounded-full bg-white/90 hover:bg-white text-rose-900 border border-rose-100 hover:scale-105 transition-all shadow-sm"
+            className="absolute top-4 right-4 z-40 p-2.5 rounded-full bg-white/90 hover:bg-white text-rose-900 border border-rose-200 hover:scale-105 transition-all shadow-md"
+            title="Fechar"
           >
             <X className="w-5 h-5" />
           </button>
 
-          <div className="grid grid-cols-1 md:grid-cols-2">
+          {/* Main Modal Body: 2 independent columns on desktop */}
+          <div className="flex flex-col md:flex-row flex-1 min-h-0 overflow-y-auto md:overflow-hidden">
             
-            {/* Left: Beautiful Product Image */}
-            <div className="relative aspect-square md:h-full bg-rose-50/50 flex flex-col justify-between">
-              <div className="relative w-full flex-1 min-h-[300px]">
+            {/* Left Column: Product Image & Multiple Image Switcher */}
+            <div className="w-full md:w-1/2 bg-rose-50/40 flex flex-col justify-between border-b md:border-b-0 md:border-r border-rose-100 shrink-0 md:h-full md:overflow-hidden">
+              <div className="relative w-full aspect-square md:aspect-auto md:flex-1 min-h-[280px] sm:min-h-[360px] md:min-h-0 bg-rose-50/60 overflow-hidden flex items-center justify-center">
                 <img
                   src={selectedImage || product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover select-none absolute inset-0"
+                  className="w-full h-full object-cover select-none transition-all duration-300"
                   referrerPolicy="no-referrer"
                 />
                 
                 {/* Image Badges */}
-                <div className="absolute top-4 left-4 flex flex-col gap-2">
+                <div className="absolute top-4 left-4 z-20 flex flex-col gap-2 max-w-[80%] pointer-events-none">
                   {product.available ? (
                     <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500 text-white shadow-md">
                       Entrega em até duas horas em Macaé
@@ -99,7 +101,7 @@ export default function ProductModal({
                     </span>
                   )}
                   {product.tag && (
-                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold bg-rose-600 text-white shadow-md">
+                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold bg-rose-600 text-white shadow-md self-start">
                       <Sparkles className="w-3.5 h-3.5" />
                       {product.tag}
                     </span>
@@ -109,7 +111,7 @@ export default function ProductModal({
 
               {/* Selection Options overlay/bottom bar */}
               {product.images && product.images.length > 1 && (
-                <div className="p-3 bg-rose-950 border-t border-rose-900/50 flex flex-col gap-2">
+                <div className="p-3.5 bg-rose-950/95 backdrop-blur border-t border-rose-900/50 flex flex-col gap-2 shrink-0 z-20">
                   <span className="text-[10px] text-rose-200 uppercase font-extrabold tracking-wider text-center">
                     Escolha o modelo / opção de imagem desejada:
                   </span>
@@ -117,6 +119,7 @@ export default function ProductModal({
                     {product.images.map((imgUrl, idx) => (
                       <button
                         key={idx}
+                        type="button"
                         onClick={() => setSelectedImage(imgUrl)}
                         className={`relative rounded-lg overflow-hidden border-2 transition-all shadow-md bg-white w-14 h-14 shrink-0 ${
                           selectedImage === imgUrl
@@ -141,15 +144,16 @@ export default function ProductModal({
               )}
             </div>
 
-            {/* Right: Product Details & Purchase controls */}
-            <div className="p-6 md:p-8 flex flex-col justify-between bg-white">
-              <div>
+            {/* Right Column: Product Details & Purchase controls */}
+            <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-between bg-white overflow-y-auto max-h-[65vh] md:max-h-full">
+              <div className="space-y-4">
                 {/* Category & Save to Favorites button */}
-                <div className="flex justify-between items-center mb-2">
+                <div className="flex justify-between items-center">
                   <span className="text-xs uppercase font-extrabold text-rose-500 tracking-wider">
                     {product.category === 'buques' ? '🌹 Buquê de Flores' : '🎁 Cesta Especial'}
                   </span>
                   <button
+                    type="button"
                     onClick={() => setIsLiked(!isLiked)}
                     className="flex items-center gap-1 text-xs text-rose-500 hover:text-rose-600 font-medium"
                   >
@@ -159,12 +163,12 @@ export default function ProductModal({
                 </div>
 
                 {/* Name */}
-                <h2 className="font-serif text-2xl md:text-3xl font-bold text-rose-950 mb-3 leading-tight">
+                <h2 className="font-serif text-2xl md:text-3xl font-bold text-rose-950 leading-tight">
                   {product.name}
                 </h2>
 
                 {/* Prices */}
-                <div className="flex flex-wrap items-baseline gap-3 mb-4">
+                <div className="flex flex-wrap items-baseline gap-3">
                   {product.originalPrice && (
                     <span className="text-lg font-sans line-through text-zinc-400">
                       {formatBRL(product.originalPrice * quantity)}
@@ -185,16 +189,21 @@ export default function ProductModal({
                   )}
                 </div>
 
-                <hr className="border-rose-100 mb-4" />
+                <hr className="border-rose-100" />
 
                 {/* Description */}
-                <p className="text-sm text-zinc-600 font-light leading-relaxed mb-6">
-                  {product.description}
-                </p>
+                <div>
+                  <h3 className="text-xs font-bold uppercase text-rose-950 tracking-wider mb-1.5">
+                    Descrição:
+                  </h3>
+                  <p className="text-sm md:text-base text-zinc-600 font-light leading-relaxed">
+                    {product.description}
+                  </p>
+                </div>
 
                 {/* Package checklist detail section */}
                 {product.details && product.details.length > 0 && (
-                  <div className="mb-6">
+                  <div className="pt-2">
                     <h3 className="text-xs font-bold uppercase text-rose-950 tracking-wider mb-2.5 flex items-center gap-1.5">
                       <span>✓</span> O que está incluído nesta opção:
                     </h3>
@@ -210,7 +219,7 @@ export default function ProductModal({
                 )}
 
                 {/* Delivery details message */}
-                <div className="bg-rose-50/50 rounded-xl p-3 border border-rose-100/50 mb-6 flex items-start gap-2.5">
+                <div className="bg-rose-50/60 rounded-xl p-3.5 border border-rose-100/60 flex items-start gap-2.5">
                   <AlertCircle className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
                   <div className="text-xs text-rose-950/80">
                     <p className="font-semibold">Informação de Entrega e Retirada</p>
@@ -224,14 +233,15 @@ export default function ProductModal({
               </div>
 
               {/* Purchase Controller Footer */}
-              <div>
+              <div className="pt-6 mt-4 border-t border-rose-100/60">
                 {/* Quantity Controller Selector */}
-                <div className="flex items-center justify-between mb-4 bg-rose-50/30 p-2.5 rounded-xl border border-rose-100/30">
+                <div className="flex items-center justify-between mb-4 bg-rose-50/40 p-2.5 rounded-xl border border-rose-100/40">
                   <span className="text-xs font-semibold text-rose-950">Quantidade:</span>
-                  <div className="flex items-center gap-3 bg-white border border-rose-100 rounded-lg p-1">
+                  <div className="flex items-center gap-3 bg-white border border-rose-200 rounded-lg p-1">
                     <button
+                      type="button"
                       onClick={handleDecrement}
-                      className="p-1 px-2 text-rose-700 hover:bg-rose-50 rounded transition font-bold"
+                      className="p-1 px-2.5 text-rose-700 hover:bg-rose-50 rounded transition font-bold text-sm"
                     >
                       -
                     </button>
@@ -239,8 +249,9 @@ export default function ProductModal({
                       {quantity}
                     </span>
                     <button
+                      type="button"
                       onClick={handleIncrement}
-                      className="p-1 px-2 text-rose-700 hover:bg-rose-50 rounded transition font-bold"
+                      className="p-1 px-2.5 text-rose-700 hover:bg-rose-50 rounded transition font-bold text-sm"
                     >
                       +
                     </button>
@@ -251,8 +262,9 @@ export default function ProductModal({
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {/* Add to Bag */}
                   <button
+                    type="button"
                     onClick={handleAddToBag}
-                    className="flex items-center justify-center gap-2 border-2 border-rose-600 text-rose-700 hover:bg-rose-50 px-4 py-3 rounded-xl text-sm font-semibold transition duration-200"
+                    className="flex items-center justify-center gap-2 border-2 border-rose-600 text-rose-700 hover:bg-rose-50 px-4 py-3 rounded-xl text-sm font-semibold transition duration-200 cursor-pointer"
                   >
                     <ShoppingBag className="w-4 h-4" />
                     Adicionar à Sacola
@@ -260,8 +272,9 @@ export default function ProductModal({
 
                   {/* Direct Order via WhatsApp */}
                   <button
+                    type="button"
                     onClick={() => onDirectOrder(product, quantity, selectedImage)}
-                    className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-xl text-sm font-bold shadow-md hover:shadow-lg transition duration-200"
+                    className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-xl text-sm font-bold shadow-md hover:shadow-lg transition duration-200 cursor-pointer"
                   >
                     <MessageCircle className="w-4 h-4" />
                     Faça sua encomenda aqui
