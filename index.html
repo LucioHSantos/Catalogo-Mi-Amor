@@ -6,10 +6,90 @@
     <link rel="icon" type="image/png" href="https://res.cloudinary.com/dvbadeh7n/image/upload/v1782492314/sem_fundobranco_hzs1gf.png" />
     <link rel="apple-touch-icon" href="https://res.cloudinary.com/dvbadeh7n/image/upload/v1782492314/sem_fundobranco_hzs1gf.png" />
     <title>Mi Amor Floricultura</title>
+    <script>
+      (function() {
+        // 1. Intercept fetch for external chat agent to prevent network/CORS crashes
+        if (typeof window !== 'undefined' && window.fetch) {
+          const originalFetch = window.fetch;
+          window.fetch = async function(...args) {
+            const url = typeof args[0] === 'string' ? args[0] : (args[0] && args[0].url) || '';
+            if (url.includes('agent-factory-api.hostgator.io')) {
+              try {
+                const response = await originalFetch.apply(this, args);
+                if (response && response.ok) {
+                  return response;
+                }
+                return new Response(JSON.stringify({ data: { published: false } }), {
+                  status: 200,
+                  headers: { 'Content-Type': 'application/json' }
+                });
+              } catch (err) {
+                console.warn('HostGator Chat API indisponível no ambiente atual:', err?.message || err);
+                return new Response(JSON.stringify({ data: { published: false } }), {
+                  status: 200,
+                  headers: { 'Content-Type': 'application/json' }
+                });
+              }
+            }
+            return originalFetch.apply(this, args);
+          };
+        }
+
+        // 2. Intercept external chat agent console errors
+        const origConsoleError = console.error;
+        console.error = function(...args) {
+          const msg = args.map(function(a) {
+            return (a && (a.message || a.stack || String(a))) || '';
+          }).join(' ');
+          if (msg.includes('Erro na API') || msg.includes('Failed to fetch') || msg.includes('agent-factory-chat') || msg.includes('BubbleChat')) {
+            console.warn('HostGator Chat notice:', ...args);
+            return;
+          }
+          origConsoleError.apply(console, args);
+        };
+
+        window.addEventListener('error', function(event) {
+          const msg = (event && (event.message || '')) + ' ' + ((event.error && (event.error.message || event.error.stack)) || '');
+          if (msg.includes('Erro na API') || msg.includes('Failed to fetch') || msg.includes('agent-factory-chat')) {
+            event.preventDefault();
+          }
+        }, true);
+
+        window.addEventListener('unhandledrejection', function(event) {
+          const reason = event.reason;
+          const msg = (reason && (reason.message || reason.stack || String(reason))) || '';
+          if (msg.includes('Erro na API') || msg.includes('Failed to fetch') || msg.includes('agent-factory-chat')) {
+            event.preventDefault();
+          }
+        });
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script type="module">
+      window.addEventListener('DOMContentLoaded', async function initChat() {
+        try {
+          const module = await import('https://agent-factory-chat.hostgator.io/scripts/start-chat.js');
+          const BubbleChat = module?.default || module?.BubbleChat || window.BubbleChat;
+          if (BubbleChat) {
+            const hashId = '45303990-ff71-4487-bc33-f71ef183f228';
+            const bubbleChat = new BubbleChat(hashId, 'prod');
+            if (bubbleChat && typeof bubbleChat.open === 'function') {
+              try {
+                const openResult = bubbleChat.open();
+                if (openResult && typeof openResult.catch === 'function') {
+                  openResult.catch(function() {});
+                }
+              } catch (openErr) {}
+            }
+          }
+        } catch (err) {
+          console.warn('Aviso ao carregar agente de chat:', err);
+        }
+      });
+    </script>
   </body>
 </html>
 
