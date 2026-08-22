@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShoppingBag, Eye, Heart, Phone, Sparkles, CheckCircle2, Clock } from 'lucide-react';
 import { Product } from '../types';
+import ImageCarousel from './ImageCarousel';
 
 interface ProductCardProps {
   key?: string | number;
@@ -18,6 +19,11 @@ export default function ProductCard({
 }: ProductCardProps) {
   const [isLiked, setIsLiked] = React.useState(false);
 
+  // Normalize product images
+  const productImages = product.images && product.images.length > 0 
+    ? product.images 
+    : [product.image];
+
   // Format currency standard BRL
   const formatBRL = (value: number) => {
     return value.toLocaleString('pt-BR', {
@@ -33,18 +39,18 @@ export default function ProductCard({
         !product.available ? 'opacity-90 bg-rose-50/20' : ''
       }`}
     >
-      {/* Product Image Area */}
-      <div className="relative aspect-square overflow-hidden bg-rose-50/50">
-        <img
-          src={product.image}
+      {/* Product Image Area with Auto-Carousel */}
+      <div className="relative aspect-square overflow-hidden bg-rose-50/50 cursor-pointer">
+        <ImageCarousel
+          images={productImages}
           alt={product.name}
-          className="w-full h-full object-cover select-none transition-transform duration-500 group-hover:scale-105"
-          referrerPolicy="no-referrer"
-          onClick={() => onViewDetails(product)}
+          aspectClassName="aspect-square"
+          onImageClick={() => onViewDetails(product)}
+          size="card"
         />
         
         {/* Availability Badges */}
-        <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
+        <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10 pointer-events-none">
           {product.available ? (
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] md:text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 shadow-sm">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
@@ -72,14 +78,14 @@ export default function ProductCard({
             e.stopPropagation();
             setIsLiked(!isLiked);
           }}
-          className="absolute top-3 right-3 p-2 rounded-full bg-white/80 hover:bg-white text-rose-500 hover:text-rose-600 border border-rose-100/50 transition-all duration-200 shadow-sm"
+          className="absolute top-3 right-3 z-20 p-2 rounded-full bg-white/85 hover:bg-white text-rose-500 hover:text-rose-600 border border-rose-100/50 transition-all duration-200 shadow-sm"
           title="Salvar nos favoritos"
         >
           <Heart className={`w-4.5 h-4.5 ${isLiked ? 'fill-rose-500 text-rose-500' : ''}`} />
         </button>
 
         {/* Quick hover visual details overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-rose-950/45 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-t from-rose-950/45 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 pointer-events-none z-10">
           <span className="text-white text-xs font-medium flex items-center gap-1">
             <Eye className="w-3.5 h-3.5" /> Clique para ver detalhes e itens inclusos
           </span>

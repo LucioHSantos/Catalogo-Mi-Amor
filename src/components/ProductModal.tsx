@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, ShoppingBag, Phone, Check, Clock, Heart, Sparkles, MessageCircle, AlertCircle } from 'lucide-react';
 import { Product } from '../types';
+import ImageCarousel from './ImageCarousel';
 
 interface ProductModalProps {
   product: Product | null;
@@ -30,6 +31,14 @@ export default function ProductModal({
   }, [product]);
 
   if (!product) return null;
+
+  const productImages = product.images && product.images.length > 0 
+    ? product.images 
+    : [product.image];
+
+  const selectedIndex = productImages.indexOf(selectedImage) >= 0 
+    ? productImages.indexOf(selectedImage) 
+    : 0;
 
   const handleIncrement = () => setQuantity((prev) => prev + 1);
   const handleDecrement = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
@@ -82,11 +91,13 @@ export default function ProductModal({
             {/* Left Column: Product Image & Multiple Image Switcher */}
             <div className="w-full md:w-1/2 bg-rose-50/40 flex flex-col justify-between border-b md:border-b-0 md:border-r border-rose-100 shrink-0 md:h-full md:overflow-hidden">
               <div className="relative w-full aspect-square md:aspect-auto md:flex-1 min-h-[280px] sm:min-h-[360px] md:min-h-0 bg-rose-50/60 overflow-hidden flex items-center justify-center">
-                <img
-                  src={selectedImage || product.image}
+                <ImageCarousel
+                  images={productImages}
                   alt={product.name}
-                  className="w-full h-full object-cover select-none transition-all duration-300"
-                  referrerPolicy="no-referrer"
+                  selectedIndex={selectedIndex}
+                  onSelectImage={(imgUrl) => setSelectedImage(imgUrl)}
+                  aspectClassName="w-full h-full min-h-[280px] sm:min-h-[360px] md:min-h-0"
+                  size="modal"
                 />
                 
                 {/* Image Badges */}
@@ -110,13 +121,13 @@ export default function ProductModal({
               </div>
 
               {/* Selection Options overlay/bottom bar */}
-              {product.images && product.images.length > 1 && (
+              {productImages.length > 1 && (
                 <div className="p-3.5 bg-rose-950/95 backdrop-blur border-t border-rose-900/50 flex flex-col gap-2 shrink-0 z-20">
                   <span className="text-[10px] text-rose-200 uppercase font-extrabold tracking-wider text-center">
-                    Escolha o modelo / opção de imagem desejada:
+                    Modelos disponíveis ({productImages.length} fotos):
                   </span>
-                  <div className="flex justify-center gap-3">
-                    {product.images.map((imgUrl, idx) => (
+                  <div className="flex justify-center gap-3 overflow-x-auto py-1">
+                    {productImages.map((imgUrl, idx) => (
                       <button
                         key={idx}
                         type="button"
@@ -124,7 +135,7 @@ export default function ProductModal({
                         className={`relative rounded-lg overflow-hidden border-2 transition-all shadow-md bg-white w-14 h-14 shrink-0 ${
                           selectedImage === imgUrl
                             ? 'border-rose-400 scale-105 ring-2 ring-rose-500/30'
-                            : 'border-white/50 hover:border-white opacity-80 hover:opacity-100'
+                            : 'border-white/50 hover:border-white opacity-75 hover:opacity-100'
                         }`}
                         title={`Opção de Imagem ${idx + 1}`}
                       >

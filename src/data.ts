@@ -44,6 +44,12 @@ export const CATALOG: Product[] = [
     available: true,
     tag: 'Clássico',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782481543/Cat%C3%A1logo_de_Buqu%C3%AAs_1_tabpda.png',
+    images: [
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782481543/Cat%C3%A1logo_de_Buqu%C3%AAs_1_tabpda.png',
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787345617/WhatsApp_Image_2026-08-21_at_17.50.52_vuwduk.jpg',
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787345617/WhatsApp_Image_2026-08-21_at_17.50.53_1_jwbafp.jpg',
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787345617/WhatsApp_Image_2026-08-21_at_17.50.52_1_wdilg5.jpg'
+    ],
     description: 'O encanto e delicadeza da simplicidade em um arranjo com 6 rosas vermelhas frescas e ramos de gipsofila, embalado com extremo requinte em papel celofane cristalino.',
     details: [
       '6 Rosas de excelente abertura',
@@ -116,6 +122,10 @@ export const CATALOG: Product[] = [
     available: false,
     tag: 'Super Volumoso',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480854/WhatsApp_Image_2026-06-03_at_10.09.58_q8vqlo.jpg',
+    images: [
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480854/WhatsApp_Image_2026-06-03_at_10.09.58_q8vqlo.jpg',
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787345617/WhatsApp_Image_2026-08-21_at_17.50.53_2_ryurl1.jpg'
+    ],
     description: 'A versão grande, generosa e super volumosa do nosso querido mix de flores do campo. Seleção nobre de flores coloridas da estação para causar uma impressão inesquecível.',
     details: [
       'Grande seleção de flores silvestres, crisântemos e ásteres',
@@ -239,6 +249,10 @@ export const CATALOG: Product[] = [
     available: true,
     tag: 'Sofisticado',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782490230/charme_akrkxo.jpg',
+    images: [
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782490230/charme_akrkxo.jpg',
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787345618/WhatsApp_Image_2026-08-21_at_17.50.54_dxlwwb.jpg'
+    ],
     description: 'Toda a elegância escultural e sofisticação dos lírios em tons suaves de rosa e branco. Um buquê compacto, charmoso e de perfume incrivelmente marcante.',
     details: [
       'Hastes selecionadas de lírios nobres rosa e brancos',
@@ -256,6 +270,10 @@ export const CATALOG: Product[] = [
     available: true,
     tag: 'Buquê de cinema',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782490230/namora_g36rzk.png',
+    images: [
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782490230/namora_g36rzk.png',
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787345617/WhatsApp_Image_2026-08-21_at_17.50.53_mdnuq2.jpg'
+    ],
     description: 'Arranjo requintado e volumoso de lírios abertos e botões selecionados com folhagem verde brilhante. O presente ideal para celebrar bodas, aniversários ou datas memoráveis.',
     details: [
       'Grande quantidade de hastes de lírios rosa e brancos nobres',
