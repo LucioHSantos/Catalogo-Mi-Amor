@@ -133,7 +133,8 @@ export const CATALOG: Product[] = [
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480854/WhatsApp_Image_2026-06-03_at_10.09.58_q8vqlo.jpg',
     images: [
       'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480854/WhatsApp_Image_2026-06-03_at_10.09.58_q8vqlo.jpg',
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787345617/WhatsApp_Image_2026-08-21_at_17.50.53_2_ryurl1.jpg'
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787345617/WhatsApp_Image_2026-08-21_at_17.50.53_2_ryurl1.jpg',
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787596550/WhatsApp_Image_2026-08-24_at_15.35.24_my2slf.jpg'
     ],
     description: 'A versão grande, generosa e super volumosa do nosso querido mix de flores do campo. Seleção nobre de flores coloridas da estação para causar uma impressão inesquecível.',
     details: [
