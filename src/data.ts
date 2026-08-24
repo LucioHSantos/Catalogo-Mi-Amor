@@ -10,6 +10,10 @@ export const CATALOG: Product[] = [
     available: false,
     tag: 'Premium',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782481017/Cat%C3%A1logo_de_Buqu%C3%AAs_j4t5qs.png',
+    images: [
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782481017/Cat%C3%A1logo_de_Buqu%C3%AAs_j4t5qs.png',
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787599415/WhatsApp_Image_2026-08-24_at_16.21.49_1_efnntu.jpg'
+    ],
     description: 'Um buquê deslumbrante composto por 18 rosas vermelhas selecionadas, envoltas por delicadas flores de gipsofila (mosquetinho). O presente perfeito para expressar um amor eterno e sem limites.',
     details: [
       '18 Rosas de haste longa selecionadas',
@@ -27,6 +31,11 @@ export const CATALOG: Product[] = [
     available: false,
     tag: 'Mais Vendido',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480854/WhatsApp_Image_2026-06-08_at_15.09.51_1_wyseqq.jpg',
+    images: [
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480854/WhatsApp_Image_2026-06-08_at_15.09.51_1_wyseqq.jpg',
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787599416/WhatsApp_Image_2026-08-24_at_16.21.50_1_xbjtyb.jpg',
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787599415/WhatsApp_Image_2026-08-24_at_16.21.46_eunuih.jpg'
+    ],
     description: 'Uma clássica e poderosa declaração de amor com 12 rosas de altíssima qualidade, embaladas harmoniosamente em papel decorativo vermelho texturizado e finalizadas com um lindo laço.',
     details: [
       '12 Rosas  frescas de produtores selecionados',
@@ -145,6 +154,10 @@ export const CATALOG: Product[] = [
     available: false,
     tag: 'Rosas e Girassóis',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480853/WhatsApp_Image_2026-06-03_at_10.09.59_1_qybldk.jpg',
+    images: [
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480853/WhatsApp_Image_2026-06-03_at_10.09.59_1_qybldk.jpg',
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787599415/WhatsApp_Image_2026-08-24_at_16.21.47_ggdqhe.jpg'
+    ],
     description: 'A harmonia ideal entre a paixão das rosas vermelhas e a energia brilhante dos girassóis. Contém 3 rosas românticas e 3 girassóis radiantes envolvidos por delicadas flores de gipsofila.',
     details: [
       '3 Girassóis bem abertos e vibrantes',
@@ -162,6 +175,10 @@ export const CATALOG: Product[] = [
     available: false,
     tag: 'Rosas e Girassóis',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480898/WhatsApp_Image_2026-05-22_at_13.06.09_1_qhrpym.jpg',
+    images: [
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480898/WhatsApp_Image_2026-05-22_at_13.06.09_1_qhrpym.jpg',
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787599416/WhatsApp_Image_2026-08-24_at_16.21.50_gjqvtm.jpg'
+    ],
     description: 'Um arranjo espetacular com 6 belas rosas vermelhas e 6 girassóis grandes abertos e cheios de luz, complementados por raminhos de gipsofila branca e embalagem especial.',
     details: [
       '6 Girassóis grandes de alta qualidade',
@@ -179,6 +196,10 @@ export const CATALOG: Product[] = [
     available: false,
     tag: 'Luxo',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782482506/12x5_hupldw.png',
+    images: [
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782482506/12x5_hupldw.png',
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787599415/WhatsApp_Image_2026-08-24_at_16.21.48_n7fzhp.jpg'
+    ],
     description: 'Uma exuberante homenagem para quem é a sua vida inteira. Combina 12 rosas vermelhas de luxo com 5 girassóis gigantes, folhagens nobres e flores gipsofila de acabamento.',
     details: [
       '12 Rosas premium selecionadas',
@@ -274,7 +295,8 @@ export const CATALOG: Product[] = [
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782490230/namora_g36rzk.png',
     images: [
       'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782490230/namora_g36rzk.png',
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787345617/WhatsApp_Image_2026-08-21_at_17.50.53_mdnuq2.jpg'
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787345617/WhatsApp_Image_2026-08-21_at_17.50.53_mdnuq2.jpg',
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787599416/WhatsApp_Image_2026-08-24_at_16.21.51_eqneav.jpg'
     ],
     description: 'Arranjo requintado e volumoso de lírios abertos e botões selecionados com folhagem verde brilhante. O presente ideal para celebrar bodas, aniversários ou datas memoráveis.',
     details: [
