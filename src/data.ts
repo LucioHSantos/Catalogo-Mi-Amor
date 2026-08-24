@@ -1,13 +1,13 @@
 import { Product } from './types';
 
 export const CATALOG: Product[] = [
-  // --- AVAILABLE BOUQUETS ---
+  // --- ROSES BOUQUETS ---
   {
     id: 'buque-amor-infinito',
     name: 'Buquê Amor Infinito (18 Rosas)',
     price: 359.90,
     category: 'buques',
-    available: true,
+    available: false,
     tag: 'Premium',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782481017/Cat%C3%A1logo_de_Buqu%C3%AAs_j4t5qs.png',
     description: 'Um buquê deslumbrante composto por 18 rosas vermelhas selecionadas, envoltas por delicadas flores de gipsofila (mosquetinho). O presente perfeito para expressar um amor eterno e sem limites.',
@@ -24,7 +24,7 @@ export const CATALOG: Product[] = [
     name: 'Buquê Apaixonado (12 Rosas)',
     price: 199.90,
     category: 'buques',
-    available: true,
+    available: false,
     tag: 'Mais Vendido',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480854/WhatsApp_Image_2026-06-08_at_15.09.51_1_wyseqq.jpg',
     description: 'Uma clássica e poderosa declaração de amor com 12 rosas de altíssima qualidade, embaladas harmoniosamente em papel decorativo vermelho texturizado e finalizadas com um lindo laço.',
@@ -41,7 +41,7 @@ export const CATALOG: Product[] = [
     name: 'Buquê Encantado (6 Rosas)',
     price: 159.90,
     category: 'buques',
-    available: true,
+    available: false,
     tag: 'Clássico',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782481543/Cat%C3%A1logo_de_Buqu%C3%AAs_1_tabpda.png',
     images: [
@@ -64,7 +64,7 @@ export const CATALOG: Product[] = [
     name: 'Buquê Mimo (03 Rosas)',
     price: 89.90,
     category: 'buques',
-    available: true,
+    available: false,
     tag: 'Delicado',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480853/WhatsApp_Image_2026-06-03_at_10.09.59_2_hl29g6.jpg',
     description: 'Um gesto carinhoso e sutil composto por 2 a 3 rosas vermelhas selecionadas, acompanhadas por folhagens decorativas e gipsofilas brancas. Ideal para alegrar o dia de alguém querido.',
@@ -81,7 +81,7 @@ export const CATALOG: Product[] = [
     name: 'Ramalhete de Flores (2 Flores)',
     price: 69.90,
     category: 'buques',
-    available: true,
+    available: false,
     tag: 'Econômico',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782482070/ramalhete1_hf0eu9.png',
     images: [
@@ -251,7 +251,9 @@ export const CATALOG: Product[] = [
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782490230/charme_akrkxo.jpg',
     images: [
       'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782490230/charme_akrkxo.jpg',
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787345618/WhatsApp_Image_2026-08-21_at_17.50.54_dxlwwb.jpg'
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787345618/WhatsApp_Image_2026-08-21_at_17.50.54_dxlwwb.jpg',
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787594206/ChatGPT_Image_24_de_ago._de_2026_09_40_28_qbvroy.png',
+      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787594206/ChatGPT_Image_24_de_ago._de_2026_09_40_39_laoawq.png'
     ],
     description: 'Toda a elegância escultural e sofisticação dos lírios em tons suaves de rosa e branco. Um buquê compacto, charmoso e de perfume incrivelmente marcante.',
     details: [

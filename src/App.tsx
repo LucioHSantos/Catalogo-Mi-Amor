@@ -85,7 +85,7 @@ export default function App() {
       currency: 'BRL',
     });
     
-    const availabilityBadge = product.available ? 'Entrega em até duas horas em Macaé' : 'Sob Encomenda 🕒';
+    const availabilityBadge = product.available ? 'Entrega em até duas horas em Macaé' : 'Indisponível no Momento (Consulta de Previsão)';
     
     let optionText = '';
     if (product.images && selectedImage) {
@@ -111,10 +111,9 @@ export default function App() {
     window.open(`https://api.whatsapp.com/send?phone=${whatsAppNumber}&text=${encoded}`, '_blank', 'referrerPolicy=no-referrer');
   };
 
-  // Filter Catalog logic based on Category, Search query and Stock Availability (strictly only available items)
+  // Filter Catalog logic based on Category, Search query and Sorting (shows all products with availability badges)
   const filteredProducts = React.useMemo(() => {
-    // Strictly filter out items marked as false (available === false)
-    let result = CATALOG.filter((p) => p.available === true);
+    let result = [...CATALOG];
 
     // 1. Filter by category
     if (selectedCategory !== 'all') {

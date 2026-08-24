@@ -103,12 +103,13 @@ export default function ProductModal({
                 {/* Image Badges */}
                 <div className="absolute top-4 left-4 z-20 flex flex-col gap-2 max-w-[80%] pointer-events-none">
                   {product.available ? (
-                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500 text-white shadow-md">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-500 text-white shadow-md">
                       Entrega em até duas horas em Macaé
                     </span>
                   ) : (
-                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500 text-white shadow-md">
-                      Sob Encomenda (Encomende Já)
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-zinc-900/90 text-rose-200 border border-rose-900/50 shadow-md backdrop-blur">
+                      <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
+                      Indisponível no Momento
                     </span>
                   )}
                   {product.tag && (
@@ -230,14 +231,18 @@ export default function ProductModal({
                 )}
 
                 {/* Delivery details message */}
-                <div className="bg-rose-50/60 rounded-xl p-3.5 border border-rose-100/60 flex items-start gap-2.5">
-                  <AlertCircle className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
+                <div className={`rounded-xl p-3.5 border flex items-start gap-2.5 ${
+                  product.available
+                    ? 'bg-rose-50/60 border-rose-100/60'
+                    : 'bg-zinc-50 border-zinc-200'
+                }`}>
+                  <AlertCircle className={`w-5 h-5 shrink-0 mt-0.5 ${product.available ? 'text-rose-600' : 'text-zinc-500'}`} />
                   <div className="text-xs text-rose-950/80">
-                    <p className="font-semibold">Informação de Entrega e Retirada</p>
+                    <p className="font-semibold">{product.available ? 'Informação de Pronta-Entrega' : 'Status de Disponibilidade'}</p>
                     <p className="font-light mt-0.5 leading-snug">
                       {product.available 
-                        ? 'Este item está disponível para retirada rápida ou entrega em até duas horas em Macaé. Consulte taxas e agendamentos.'
-                        : 'Este item é sob encomenda prévia. O prazo padrão é de 24 horas. Para urgências, fale conosco pelo WhatsApp.'}
+                        ? 'Este item está disponível para pronta-entrega ou retirada rápida em até duas horas em Macaé. Consulte taxas e agendamentos.'
+                        : 'Este item encontra-se indisponível para pronta-entrega no momento. Fale conosco pelo WhatsApp para consultar prazos de reposição ou fazer uma encomenda futura.'}
                     </p>
                   </div>
                 </div>
@@ -285,10 +290,14 @@ export default function ProductModal({
                   <button
                     type="button"
                     onClick={() => onDirectOrder(product, quantity, selectedImage)}
-                    className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-xl text-sm font-bold shadow-md hover:shadow-lg transition duration-200 cursor-pointer"
+                    className={`flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-bold shadow-md hover:shadow-lg transition duration-200 cursor-pointer text-white ${
+                      product.available
+                        ? 'bg-emerald-600 hover:bg-emerald-700'
+                        : 'bg-zinc-800 hover:bg-zinc-900'
+                    }`}
                   >
                     <MessageCircle className="w-4 h-4" />
-                    Faça sua encomenda aqui
+                    {product.available ? 'Faça sua encomenda aqui' : 'Consultar no WhatsApp'}
                   </button>
                 </div>
               </div>

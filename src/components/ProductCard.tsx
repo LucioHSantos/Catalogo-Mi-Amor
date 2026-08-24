@@ -57,9 +57,9 @@ export default function ProductCard({
               Entrega em até duas horas em Macaé
             </span>
           ) : (
-            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] md:text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200 shadow-sm">
-              <Clock className="w-3.5 h-3.5 text-amber-500" />
-              Sob Encomenda
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] md:text-xs font-bold bg-zinc-900/90 text-rose-200 border border-rose-900/50 shadow-md backdrop-blur">
+              <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+              Indisponível
             </span>
           )}
 
@@ -138,15 +138,27 @@ export default function ProductCard({
 
           {/* Action buttons (Direct WhatsApp Link or Bag) */}
           <div className="flex flex-col gap-2" id={`actions-${product.id}`}>
-            <a
-              href={`https://wa.me/5522999301051?text=${encodeURIComponent(`Olá! Gostaria de fazer a encomenda do seguinte item do catálogo:\n🌹 *${product.name}*\nPreço: R$ ${product.price.toFixed(2).replace('.', ',')}`)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white w-full py-2.5 rounded-xl text-xs font-bold shadow-md hover:shadow-lg transition duration-200"
-            >
-              <Phone className="w-3.5 h-3.5" />
-              Faça sua encomenda aqui
-            </a>
+            {product.available ? (
+              <a
+                href={`https://wa.me/5522999301051?text=${encodeURIComponent(`Olá! Gostaria de fazer a encomenda do seguinte item do catálogo:\n🌹 *${product.name}*\nPreço: R$ ${product.price.toFixed(2).replace('.', ',')}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white w-full py-2.5 rounded-xl text-xs font-bold shadow-md hover:shadow-lg transition duration-200"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                Faça sua encomenda aqui
+              </a>
+            ) : (
+              <a
+                href={`https://wa.me/5522999301051?text=${encodeURIComponent(`Olá! Gostaria de consultar sobre a disponibilidade / encomenda futura do item:\n🌹 *${product.name}* (Indisponível no momento)\nPreço de referência: R$ ${product.price.toFixed(2).replace('.', ',')}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-zinc-700 hover:bg-zinc-800 text-zinc-100 w-full py-2.5 rounded-xl text-xs font-bold shadow transition duration-200"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                Consultar no WhatsApp
+              </a>
+            )}
 
             <div className="grid grid-cols-2 gap-2">
               <button
@@ -159,7 +171,11 @@ export default function ProductCard({
 
               <button
                 onClick={() => onAddToCart(product)}
-                className="flex items-center justify-center gap-1.5 bg-rose-50 hover:bg-rose-100 text-rose-800 border border-rose-100 px-3 py-2 rounded-xl text-xs font-medium transition duration-200"
+                className={`flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-medium border transition duration-200 ${
+                  product.available
+                    ? 'bg-rose-50 hover:bg-rose-100 text-rose-800 border-rose-100'
+                    : 'bg-zinc-50 hover:bg-zinc-100 text-zinc-600 border-zinc-200'
+                }`}
               >
                 <ShoppingBag className="w-3.5 h-3.5" />
                 Adicionar
