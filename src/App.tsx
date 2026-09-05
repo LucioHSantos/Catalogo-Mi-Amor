@@ -291,6 +291,10 @@ export default function App() {
                   <span className="text-base text-rose-400 shrink-0">📍</span>
                   <span>Sede Central Mi Amor Floricultura • Entregas rápidas em domicílio ou retirada agendada na floricultura.</span>
                 </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-base text-rose-400 shrink-0">🕒</span>
+                  <span>Atendimento: Segunda a sexta das 8h às 18h • Sábado das 8h às 14h</span>
+                </div>
                 <div className="flex items-center gap-2">
                   <span className="text-base text-rose-400 shrink-0">📞</span>
                   <span>Telefone Comercial: Fale direto via botões do WhatsApp</span>

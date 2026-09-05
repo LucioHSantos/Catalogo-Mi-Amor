@@ -87,7 +87,7 @@ export default function Header({
             </div>
             <div className="flex items-center gap-1.5 font-medium">
               <Clock className="w-4 h-4 text-rose-600 shrink-0" />
-              <span>Seg a Sáb: 08h às 18h</span>
+              <span>Seg a Sex: 08h às 18h | Sáb: 08h às 14h</span>
             </div>
           </div>
 
