@@ -44,10 +44,19 @@ export default function ProductCard({
         <ImageCarousel
           images={productImages}
           alt={product.name}
-          aspectClassName="aspect-square"
+          aspectClassName={`aspect-square ${!product.available ? 'opacity-85' : ''}`}
           onImageClick={() => onViewDetails(product)}
           size="card"
         />
+
+        {/* Tarja Vermelha: ESGOTADO PARA HOJE */}
+        {!product.available && (
+          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-20 bg-red-600 shadow-xl py-2.5 px-3 text-center border-y-2 border-red-700 pointer-events-none">
+            <span className="text-white text-xs sm:text-sm font-black tracking-widest uppercase flex items-center justify-center gap-1.5 drop-shadow">
+              ESGOTADO PARA HOJE
+            </span>
+          </div>
+        )}
         
         {/* Availability Badges */}
         <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10 pointer-events-none">
@@ -57,9 +66,8 @@ export default function ProductCard({
               Entrega em até duas horas em Macaé
             </span>
           ) : (
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] md:text-xs font-bold bg-zinc-900/90 text-rose-200 border border-rose-900/50 shadow-md backdrop-blur">
-              <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
-              Indisponível
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] md:text-xs font-black bg-red-600 text-white shadow-md uppercase tracking-wider">
+              ESGOTADO PARA HOJE
             </span>
           )}
 
@@ -150,13 +158,13 @@ export default function ProductCard({
               </a>
             ) : (
               <a
-                href={`https://wa.me/5522999301051?text=${encodeURIComponent(`Olá! Gostaria de consultar sobre a disponibilidade / encomenda futura do item:\n🌹 *${product.name}* (Indisponível no momento)\nPreço de referência: R$ ${product.price.toFixed(2).replace('.', ',')}`)}`}
+                href={`https://wa.me/5522999301051?text=${encodeURIComponent(`Olá! Gostaria de consultar sobre o item:\n🌹 *${product.name}* (Esgotado para hoje)\nPreço de referência: R$ ${product.price.toFixed(2).replace('.', ',')}\nGostaria de encomendar para outra data!`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-zinc-700 hover:bg-zinc-800 text-zinc-100 w-full py-2.5 rounded-xl text-xs font-bold shadow transition duration-200"
+                className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white w-full py-2.5 rounded-xl text-xs font-bold shadow transition duration-200"
               >
                 <Phone className="w-3.5 h-3.5" />
-                Consultar no WhatsApp
+                Esgotado hoje • Encomendar no WhatsApp
               </a>
             )}
 
@@ -174,11 +182,11 @@ export default function ProductCard({
                 className={`flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-medium border transition duration-200 ${
                   product.available
                     ? 'bg-rose-50 hover:bg-rose-100 text-rose-800 border-rose-100'
-                    : 'bg-zinc-50 hover:bg-zinc-100 text-zinc-600 border-zinc-200'
+                    : 'bg-red-50 hover:bg-red-100 text-red-700 border-red-200'
                 }`}
               >
                 <ShoppingBag className="w-3.5 h-3.5" />
-                Adicionar
+                {product.available ? 'Adicionar' : 'Esgotado'}
               </button>
             </div>
           </div>

@@ -167,6 +167,11 @@ export default function CartDrawer({
                             <h4 className="font-serif text-sm font-semibold text-rose-950 truncate">
                               {item.product.name}
                             </h4>
+                            {!item.product.available && (
+                              <span className="inline-block text-[9px] font-black uppercase bg-red-600 text-white px-1.5 py-0.5 rounded tracking-wider mt-0.5">
+                                Esgotado para hoje
+                              </span>
+                            )}
                             <div className="flex items-center gap-1.5 mt-0.5">
                               {item.product.originalPrice && (
                                 <span className="text-[11px] text-zinc-400 line-through">

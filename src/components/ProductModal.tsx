@@ -99,6 +99,15 @@ export default function ProductModal({
                   aspectClassName="w-full h-full min-h-[280px] sm:min-h-[360px] md:min-h-0"
                   size="modal"
                 />
+
+                {/* Tarja Vermelha: ESGOTADO PARA HOJE */}
+                {!product.available && (
+                  <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-30 bg-red-600 shadow-2xl py-3 px-4 text-center border-y-2 border-red-700 pointer-events-none">
+                    <span className="text-white text-sm md:text-base font-black tracking-widest uppercase flex items-center justify-center gap-2 drop-shadow">
+                      ESGOTADO PARA HOJE
+                    </span>
+                  </div>
+                )}
                 
                 {/* Image Badges */}
                 <div className="absolute top-4 left-4 z-20 flex flex-col gap-2 max-w-[80%] pointer-events-none">
@@ -107,9 +116,8 @@ export default function ProductModal({
                       Entrega em até duas horas em Macaé
                     </span>
                   ) : (
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-zinc-900/90 text-rose-200 border border-rose-900/50 shadow-md backdrop-blur">
-                      <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
-                      Indisponível no Momento
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-black bg-red-600 text-white shadow-md uppercase tracking-wider">
+                      ESGOTADO PARA HOJE
                     </span>
                   )}
                   {product.tag && (
@@ -234,15 +242,17 @@ export default function ProductModal({
                 <div className={`rounded-xl p-3.5 border flex items-start gap-2.5 ${
                   product.available
                     ? 'bg-rose-50/60 border-rose-100/60'
-                    : 'bg-zinc-50 border-zinc-200'
+                    : 'bg-red-50 border-red-200'
                 }`}>
-                  <AlertCircle className={`w-5 h-5 shrink-0 mt-0.5 ${product.available ? 'text-rose-600' : 'text-zinc-500'}`} />
-                  <div className="text-xs text-rose-950/80">
-                    <p className="font-semibold">{product.available ? 'Informação de Pronta-Entrega' : 'Status de Disponibilidade'}</p>
-                    <p className="font-light mt-0.5 leading-snug">
+                  <AlertCircle className={`w-5 h-5 shrink-0 mt-0.5 ${product.available ? 'text-rose-600' : 'text-red-600'}`} />
+                  <div className="text-xs">
+                    <p className={`font-bold ${product.available ? 'text-rose-950' : 'text-red-700 uppercase tracking-wide'}`}>
+                      {product.available ? 'Informação de Pronta-Entrega' : 'Esgotado para Hoje'}
+                    </p>
+                    <p className="font-light mt-0.5 leading-snug text-zinc-700">
                       {product.available 
                         ? 'Este item está disponível para pronta-entrega ou retirada rápida em até duas horas em Macaé. Consulte taxas e agendamentos.'
-                        : 'Este item encontra-se indisponível para pronta-entrega no momento. Fale conosco pelo WhatsApp para consultar prazos de reposição ou fazer uma encomenda futura.'}
+                        : 'Este produto encontra-se esgotado para pronta-entrega hoje. Fale conosco pelo WhatsApp para encomendar com antecedência para as próximas datas.'}
                     </p>
                   </div>
                 </div>
@@ -280,10 +290,14 @@ export default function ProductModal({
                   <button
                     type="button"
                     onClick={handleAddToBag}
-                    className="flex items-center justify-center gap-2 border-2 border-rose-600 text-rose-700 hover:bg-rose-50 px-4 py-3 rounded-xl text-sm font-semibold transition duration-200 cursor-pointer"
+                    className={`flex items-center justify-center gap-2 border-2 px-4 py-3 rounded-xl text-sm font-semibold transition duration-200 cursor-pointer ${
+                      product.available
+                        ? 'border-rose-600 text-rose-700 hover:bg-rose-50'
+                        : 'border-red-300 text-red-700 bg-red-50/50 hover:bg-red-100'
+                    }`}
                   >
                     <ShoppingBag className="w-4 h-4" />
-                    Adicionar à Sacola
+                    {product.available ? 'Adicionar à Sacola' : 'Adicionar (Esgotado Hoje)'}
                   </button>
 
                   {/* Direct Order via WhatsApp */}
@@ -293,11 +307,11 @@ export default function ProductModal({
                     className={`flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-bold shadow-md hover:shadow-lg transition duration-200 cursor-pointer text-white ${
                       product.available
                         ? 'bg-emerald-600 hover:bg-emerald-700'
-                        : 'bg-zinc-800 hover:bg-zinc-900'
+                        : 'bg-red-600 hover:bg-red-700'
                     }`}
                   >
                     <MessageCircle className="w-4 h-4" />
-                    {product.available ? 'Faça sua encomenda aqui' : 'Consultar no WhatsApp'}
+                    {product.available ? 'Faça sua encomenda aqui' : 'Esgotado hoje • Consultar no WhatsApp'}
                   </button>
                 </div>
               </div>
