@@ -102,7 +102,7 @@ export default function ProductModal({
 
                 {/* Tarja Vermelha: ESGOTADO PARA HOJE */}
                 {!product.available && (
-                  <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-30 bg-red-600 shadow-2xl py-3 px-4 text-center border-y-2 border-red-700 pointer-events-none">
+                  <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-30 bg-[#7F0000] shadow-2xl py-3 px-4 text-center border-y-2 border-[#5a0000] pointer-events-none">
                     <span className="text-white text-sm md:text-base font-black tracking-widest uppercase flex items-center justify-center gap-2 drop-shadow">
                       ESGOTADO PARA HOJE
                     </span>
@@ -116,7 +116,7 @@ export default function ProductModal({
                       Entrega em até duas horas em Macaé
                     </span>
                   ) : (
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-black bg-red-600 text-white shadow-md uppercase tracking-wider">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-black bg-[#7F0000] text-white shadow-md uppercase tracking-wider">
                       ESGOTADO PARA HOJE
                     </span>
                   )}
@@ -242,11 +242,11 @@ export default function ProductModal({
                 <div className={`rounded-xl p-3.5 border flex items-start gap-2.5 ${
                   product.available
                     ? 'bg-rose-50/60 border-rose-100/60'
-                    : 'bg-red-50 border-red-200'
+                    : 'bg-[#7F0000]/10 border-[#7F0000]/30'
                 }`}>
-                  <AlertCircle className={`w-5 h-5 shrink-0 mt-0.5 ${product.available ? 'text-rose-600' : 'text-red-600'}`} />
+                  <AlertCircle className={`w-5 h-5 shrink-0 mt-0.5 ${product.available ? 'text-rose-600' : 'text-[#7F0000]'}`} />
                   <div className="text-xs">
-                    <p className={`font-bold ${product.available ? 'text-rose-950' : 'text-red-700 uppercase tracking-wide'}`}>
+                    <p className={`font-bold ${product.available ? 'text-rose-950' : 'text-[#7F0000] uppercase tracking-wide'}`}>
                       {product.available ? 'Informação de Pronta-Entrega' : 'Esgotado para Hoje'}
                     </p>
                     <p className="font-light mt-0.5 leading-snug text-zinc-700">
@@ -293,7 +293,7 @@ export default function ProductModal({
                     className={`flex items-center justify-center gap-2 border-2 px-4 py-3 rounded-xl text-sm font-semibold transition duration-200 cursor-pointer ${
                       product.available
                         ? 'border-rose-600 text-rose-700 hover:bg-rose-50'
-                        : 'border-red-300 text-red-700 bg-red-50/50 hover:bg-red-100'
+                        : 'border-[#7F0000]/40 text-[#7F0000] bg-[#7F0000]/10 hover:bg-[#7F0000]/15'
                     }`}
                   >
                     <ShoppingBag className="w-4 h-4" />
@@ -307,7 +307,7 @@ export default function ProductModal({
                     className={`flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-bold shadow-md hover:shadow-lg transition duration-200 cursor-pointer text-white ${
                       product.available
                         ? 'bg-emerald-600 hover:bg-emerald-700'
-                        : 'bg-red-600 hover:bg-red-700'
+                        : 'bg-[#7F0000] hover:bg-[#660000]'
                     }`}
                   >
                     <MessageCircle className="w-4 h-4" />

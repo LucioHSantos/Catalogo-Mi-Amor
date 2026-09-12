@@ -51,7 +51,7 @@ export default function ProductCard({
 
         {/* Tarja Vermelha: ESGOTADO PARA HOJE */}
         {!product.available && (
-          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-20 bg-red-600 shadow-xl py-2.5 px-3 text-center border-y-2 border-red-700 pointer-events-none">
+          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-20 bg-[#7F0000] shadow-xl py-2.5 px-3 text-center border-y-2 border-[#5a0000] pointer-events-none">
             <span className="text-white text-xs sm:text-sm font-black tracking-widest uppercase flex items-center justify-center gap-1.5 drop-shadow">
               ESGOTADO PARA HOJE
             </span>
@@ -66,7 +66,7 @@ export default function ProductCard({
               Entrega em até duas horas em Macaé
             </span>
           ) : (
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] md:text-xs font-black bg-red-600 text-white shadow-md uppercase tracking-wider">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] md:text-xs font-black bg-[#7F0000] text-white shadow-md uppercase tracking-wider">
               ESGOTADO PARA HOJE
             </span>
           )}
@@ -161,7 +161,7 @@ export default function ProductCard({
                 href={`https://wa.me/5522999301051?text=${encodeURIComponent(`Olá! Gostaria de consultar sobre o item:\n🌹 *${product.name}* (Esgotado para hoje)\nPreço de referência: R$ ${product.price.toFixed(2).replace('.', ',')}\nGostaria de encomendar para outra data!`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white w-full py-2.5 rounded-xl text-xs font-bold shadow transition duration-200"
+                className="flex items-center justify-center gap-2 bg-[#7F0000] hover:bg-[#660000] text-white w-full py-2.5 rounded-xl text-xs font-bold shadow transition duration-200"
               >
                 <Phone className="w-3.5 h-3.5" />
                 Esgotado hoje • Encomendar no WhatsApp
@@ -182,7 +182,7 @@ export default function ProductCard({
                 className={`flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-medium border transition duration-200 ${
                   product.available
                     ? 'bg-rose-50 hover:bg-rose-100 text-rose-800 border-rose-100'
-                    : 'bg-red-50 hover:bg-red-100 text-red-700 border-red-200'
+                    : 'bg-[#7F0000]/10 hover:bg-[#7F0000]/15 text-[#7F0000] border-[#7F0000]/30'
                 }`}
               >
                 <ShoppingBag className="w-3.5 h-3.5" />

@@ -168,7 +168,7 @@ export default function CartDrawer({
                               {item.product.name}
                             </h4>
                             {!item.product.available && (
-                              <span className="inline-block text-[9px] font-black uppercase bg-red-600 text-white px-1.5 py-0.5 rounded tracking-wider mt-0.5">
+                              <span className="inline-block text-[9px] font-black uppercase bg-[#7F0000] text-white px-1.5 py-0.5 rounded tracking-wider mt-0.5">
                                 Esgotado para hoje
                               </span>
                             )}
