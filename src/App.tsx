@@ -99,8 +99,14 @@ export default function App() {
     text += `Olá! Fiquei muito interessado(a) no seguinte produto do catálogo:\n\n`;
     text += `• *${quantity}x ${product.name}${optionText}*\n`;
     text += `  _Status: ${availabilityBadge}_\n`;
-    text += `  _Valor Unitário: R$ ${product.price.toFixed(2).replace('.', ',')}_\n`;
-    text += `  _Subtotal: ${totalVal}_\n\n`;
+    if (product.originalPrice) {
+      text += `  _Valor no Pix/À vista (50% OFF): R$ ${product.price.toFixed(2).replace('.', ',')} cada_\n`;
+      text += `  _Valor normal no cartão: R$ ${product.originalPrice.toFixed(2).replace('.', ',')} cada_\n`;
+      text += `  _Subtotal no Pix: ${totalVal}_\n\n`;
+    } else {
+      text += `  _Valor Unitário: R$ ${product.price.toFixed(2).replace('.', ',')}_\n`;
+      text += `  _Subtotal: ${totalVal}_\n\n`;
+    }
     if (selectedImage) {
       text += `  _Link da imagem escolhida:_ ${selectedImage}\n\n`;
     }

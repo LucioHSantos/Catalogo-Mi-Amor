@@ -47,6 +47,16 @@ export default function Header({
 
   return (
     <header className="relative w-full bg-white border-b border-rose-100" id="shop-header">
+      {/* Top Promotional Bar */}
+      <div className="bg-gradient-to-r from-rose-900 via-rose-700 to-rose-900 text-white text-xs md:text-sm font-semibold py-2 px-4 text-center flex items-center justify-center gap-2 shadow-inner">
+        <span className="bg-emerald-500 text-white text-[10px] md:text-xs font-black px-2 py-0.5 rounded-full uppercase tracking-wider shadow-xs">
+          50% OFF
+        </span>
+        <span>
+          <strong>PROMOÇÃO ESPECIAL:</strong> 50% de desconto em todos os buquês para pagamentos no Pix e à vista! 🌹✨
+        </span>
+      </div>
+
       {/* Visual Ambient Background Hero */}
       <div className="relative h-64 md:h-80 w-full overflow-hidden bg-rose-950" id="hero-banner">
         <img

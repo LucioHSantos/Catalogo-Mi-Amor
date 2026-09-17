@@ -188,24 +188,42 @@ export default function ProductModal({
                 </h2>
 
                 {/* Prices */}
-                <div className="flex flex-wrap items-baseline gap-3">
+                <div className="flex flex-col gap-1">
                   {product.originalPrice && (
-                    <span className="text-lg font-sans line-through text-zinc-400">
-                      {formatBRL(product.originalPrice * quantity)}
-                    </span>
+                    <div className="flex items-center gap-2 text-sm text-zinc-400">
+                      <span>De:</span>
+                      <span className="font-sans line-through">
+                        {formatBRL(product.originalPrice * quantity)}
+                      </span>
+                      <span className="inline-flex items-center px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-extrabold text-xs">
+                        50% OFF
+                      </span>
+                    </div>
                   )}
-                  <span className="text-3xl font-extrabold font-sans text-rose-700">
-                    {formatBRL(product.price * quantity)}
-                  </span>
-                  {quantity > 1 && (
-                    <span className="text-sm text-zinc-400">
-                      ({formatBRL(product.price)} cada)
+                  <div className="flex flex-wrap items-baseline gap-2">
+                    <span className="text-3xl font-extrabold font-sans text-rose-700">
+                      {formatBRL(product.price * quantity)}
                     </span>
-                  )}
+                    {product.originalPrice && (
+                      <span className="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded">
+                        no Pix ou à vista
+                      </span>
+                    )}
+                    {quantity > 1 && (
+                      <span className="text-xs text-zinc-400">
+                        ({formatBRL(product.price)} cada)
+                      </span>
+                    )}
+                  </div>
                   {product.originalPrice && (
-                    <span className="inline-flex items-center px-2 py-1 rounded bg-rose-100 text-rose-700 font-bold text-xs animate-pulse">
-                      Economize {formatBRL((product.originalPrice - product.price) * quantity)}!
-                    </span>
+                    <div className="flex flex-wrap items-center gap-2 mt-1">
+                      <span className="text-xs text-zinc-500 font-light">
+                        ou {formatBRL(product.originalPrice * quantity)} no cartão
+                      </span>
+                      <span className="inline-flex items-center px-2 py-0.5 rounded bg-rose-100 text-rose-700 font-bold text-xs animate-pulse">
+                        Economize {formatBRL((product.originalPrice - product.price) * quantity)}!
+                      </span>
+                    </div>
                   )}
                 </div>
 

@@ -55,7 +55,8 @@ export default function CartDrawer({
     let itemsText = '';
     cartItems.forEach((item) => {
       const itemTotal = item.product.price * item.quantity;
-      itemsText += `• *${item.quantity}x ${item.product.name}*\n  _Preço: ${formatBRL(item.product.price)} cada_\n  _Subtotal: ${formatBRL(itemTotal)}_\n\n`;
+      const discountLabel = item.product.originalPrice ? ` (50% OFF no Pix/à vista • de ${formatBRL(item.product.originalPrice)})` : '';
+      itemsText += `• *${item.quantity}x ${item.product.name}*\n  _Preço Unitário: ${formatBRL(item.product.price)}${discountLabel}_\n  _Subtotal: ${formatBRL(itemTotal)}_\n\n`;
     });
 
     // Formatting recipient & delivery info
@@ -80,8 +81,11 @@ export default function CartDrawer({
     messageText += `--------------------------------------------\n`;
     messageText += itemsText;
     messageText += `--------------------------------------------\n`;
-    messageText += `💵 *VALOR TOTAL:* *${formatBRL(subtotal)}*\n\n`;
-    messageText += `_Por favor, informe a chave Pix ou forma de pagamento de preferência. Obrigado!_ ✨`;
+    messageText += `💵 *VALOR TOTAL (PIX OU À VISTA):* *${formatBRL(subtotal)}*\n`;
+    if (totalSavings > 0) {
+      messageText += `🎉 *ECONOMIA DE 50% NO PIX:* *${formatBRL(totalSavings)}*\n`;
+    }
+    messageText += `\n_Por favor, informe a chave Pix ou dados para pagamento à vista. Obrigado!_ ✨`;
 
     // Encode URL
     const encodedMessage = encodeURIComponent(messageText);
@@ -172,7 +176,7 @@ export default function CartDrawer({
                                 Esgotado para hoje
                               </span>
                             )}
-                            <div className="flex items-center gap-1.5 mt-0.5">
+                            <div className="flex flex-wrap items-center gap-1.5 mt-0.5">
                               {item.product.originalPrice && (
                                 <span className="text-[11px] text-zinc-400 line-through">
                                   {formatBRL(item.product.originalPrice)}
@@ -182,8 +186,8 @@ export default function CartDrawer({
                                 {formatBRL(item.product.price)}
                               </p>
                               {item.product.originalPrice && (
-                                <span className="text-[9px] font-bold bg-rose-50 text-rose-600 px-1 rounded animate-pulse">
-                                  Promo
+                                <span className="text-[9px] font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-200 px-1 py-0.2 rounded">
+                                  50% OFF Pix
                                 </span>
                               )}
                             </div>
@@ -324,14 +328,14 @@ export default function CartDrawer({
                     <hr className="border-rose-100" />
 
                      {/* Submit Invoice details summary */}
-                    <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
+                    <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-200">
                       <div className="flex justify-between text-sm text-emerald-950 font-medium mb-1">
-                        <span>Produtos:</span>
-                        <span className="font-mono">{formatBRL(subtotal)}</span>
+                        <span>Subtotal no Pix / à vista:</span>
+                        <span className="font-mono font-bold">{formatBRL(subtotal)}</span>
                       </div>
                       {totalSavings > 0 && (
-                        <div className="flex justify-between text-xs text-rose-600 font-semibold mb-1">
-                          <span>Desconto Economizado:</span>
+                        <div className="flex justify-between text-xs text-rose-700 font-semibold mb-1">
+                          <span>Desconto Economizado (50% OFF):</span>
                           <span className="font-mono">-{formatBRL(totalSavings)}</span>
                         </div>
                       )}
@@ -339,13 +343,13 @@ export default function CartDrawer({
                         <span>Taxa de Entrega:</span>
                         <span className="italic">{deliveryType === 'delivery' ? 'A combinar' : 'Grátis (Retirada)'}</span>
                       </div>
-                      <div className="flex justify-between text-base text-emerald-950 font-bold pt-2 border-t border-emerald-200/50">
-                        <span>Total Geral:</span>
+                      <div className="flex justify-between text-base text-emerald-950 font-bold pt-2 border-t border-emerald-200">
+                        <span>Total no Pix ou à vista:</span>
                         <span className="font-sans text-lg text-emerald-800 font-extrabold">{formatBRL(subtotal)}</span>
                       </div>
                       {totalSavings > 0 && (
-                        <div className="mt-2 text-[11px] text-center font-bold bg-rose-100 text-rose-700 py-1.5 rounded-lg border border-rose-200 animate-pulse">
-                          🎉 Incrível! Você economizou {formatBRL(totalSavings)} nessa compra!
+                        <div className="mt-2 text-[11px] text-center font-bold bg-emerald-600 text-white py-1.5 rounded-lg shadow-sm">
+                          🎉 Incrível! Você está economizando {formatBRL(totalSavings)} com o desconto de 50%!
                         </div>
                       )}
                     </div>

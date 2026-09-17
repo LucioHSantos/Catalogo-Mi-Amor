@@ -125,22 +125,29 @@ export default function ProductCard({
 
         {/* Price & Actions Row */}
         <div>
-          <div className="flex flex-wrap items-baseline gap-1.5 mb-4">
+          <div className="flex flex-col mb-4">
             {product.originalPrice && (
-              <span className="text-sm font-sans line-through text-zinc-400 mr-1">
-                {formatBRL(product.originalPrice)}
-              </span>
+              <div className="flex items-center gap-1.5 text-xs text-zinc-400 mb-0.5">
+                <span className="line-through">{formatBRL(product.originalPrice)}</span>
+                <span className="inline-flex items-center px-1.5 py-0.2 rounded text-[10px] font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                  50% OFF
+                </span>
+              </div>
             )}
-            <span className="text-2xl font-bold font-sans text-rose-700">
-              {formatBRL(product.price)}
-            </span>
+            <div className="flex items-baseline gap-1.5 flex-wrap">
+              <span className="text-2xl font-bold font-sans text-rose-700">
+                {formatBRL(product.price)}
+              </span>
+              {product.originalPrice && (
+                <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded">
+                  no Pix / à vista
+                </span>
+              )}
+            </div>
             {product.originalPrice && (
-              <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-rose-100 text-rose-700 border border-rose-200 animate-pulse ml-1">
-                Economize {formatBRL(product.originalPrice - product.price)}!
+              <span className="text-[11px] text-zinc-500 font-light mt-0.5">
+                ou {formatBRL(product.originalPrice)} no cartão
               </span>
-            )}
-            {product.category === 'buques' && product.price > 180 && (
-              <span className="text-[10px] text-zinc-400 ml-1">ou 3x de {formatBRL(product.price / 3)}</span>
             )}
           </div>
 
@@ -148,7 +155,7 @@ export default function ProductCard({
           <div className="flex flex-col gap-2" id={`actions-${product.id}`}>
             {product.available ? (
               <a
-                href={`https://wa.me/5522999301051?text=${encodeURIComponent(`Olá! Gostaria de fazer a encomenda do seguinte item do catálogo:\n🌹 *${product.name}*\nPreço: R$ ${product.price.toFixed(2).replace('.', ',')}`)}`}
+                href={`https://wa.me/5522999301051?text=${encodeURIComponent(`Olá! Gostaria de fazer a encomenda do seguinte item do catálogo:\n🌹 *${product.name}*\nPreço no Pix/À vista (50% OFF): R$ ${product.price.toFixed(2).replace('.', ',')}${product.originalPrice ? `\n(Valor normal: R$ ${product.originalPrice.toFixed(2).replace('.', ',')})` : ''}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white w-full py-2.5 rounded-xl text-xs font-bold shadow-md hover:shadow-lg transition duration-200"
