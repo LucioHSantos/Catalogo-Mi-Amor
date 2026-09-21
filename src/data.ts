@@ -5,11 +5,10 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-amor-infinito',
     name: 'Buquê Amor Infinito (18 Rosas)',
-    price: 189.95,
-    originalPrice: 379.90,
+    price: 379.90,
     category: 'buques',
     available: true,
-    tag: '50% OFF no Pix',
+    tag: 'Premium',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782481017/Cat%C3%A1logo_de_Buqu%C3%AAs_j4t5qs.png',
     images: [
       'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782481017/Cat%C3%A1logo_de_Buqu%C3%AAs_j4t5qs.png',
@@ -27,11 +26,10 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-apaixonado',
     name: 'Buquê Apaixonado (12 Rosas)',
-    price: 109.95,
-    originalPrice: 219.90,
+    price: 219.90,
     category: 'buques',
     available: true,
-    tag: 'Mais Vendido • 50% OFF',
+    tag: 'Mais Vendido',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480854/WhatsApp_Image_2026-06-08_at_15.09.51_1_wyseqq.jpg',
     images: [
       'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480854/WhatsApp_Image_2026-06-08_at_15.09.51_1_wyseqq.jpg',
@@ -50,11 +48,10 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-encantado',
     name: 'Buquê Encantado (6 Rosas)',
-    price: 89.95,
-    originalPrice: 179.90,
+    price: 179.90,
     category: 'buques',
     available: true,
-    tag: '50% OFF no Pix',
+    tag: 'Clássico',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782481543/Cat%C3%A1logo_de_Buqu%C3%AAs_1_tabpda.png',
     images: [
       'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782481543/Cat%C3%A1logo_de_Buqu%C3%AAs_1_tabpda.png',
@@ -74,11 +71,10 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-mimo',
     name: 'Buquê Mimo (03 Rosas)',
-    price: 54.95,
-    originalPrice: 109.90,
+    price: 109.90,
     category: 'buques',
     available: true,
-    tag: '50% OFF no Pix',
+    tag: 'Delicado',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480853/WhatsApp_Image_2026-06-03_at_10.09.59_2_hl29g6.jpg',
     description: 'Um gesto carinhoso e sutil composto por 2 a 3 rosas vermelhas selecionadas, acompanhadas por folhagens decorativas e gipsofilas brancas. Ideal para alegrar o dia de alguém querido.',
     details: [
@@ -92,11 +88,10 @@ export const CATALOG: Product[] = [
   {
     id: 'ramalhete-de-flores',
     name: 'Ramalhete de Flores (2 Flores)',
-    price: 44.95,
-    originalPrice: 89.90,
+    price: 89.90,
     category: 'buques',
     available: true,
-    tag: '50% OFF no Pix',
+    tag: 'Econômico',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782482070/ramalhete1_hf0eu9.png',
     images: [
       'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782482070/ramalhete1_hf0eu9.png',
@@ -114,11 +109,10 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-Flores do Campo-m',
     name: 'Buquê Flores do Campo M',
-    price: 64.95,
-    originalPrice: 129.90,
+    price: 129.90,
     category: 'buques',
     available: true,
-    tag: '50% OFF no Pix',
+    tag: 'Colorido',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782489939/WhatsApp_Image_2026-06-11_at_10.42.32_iatar7.jpg',
     description: 'Uma maravilhosa explosão de cores e frescor! Mix de flores da estação, crisântemos e margaridas em tons suaves de rosa, branco e lilás com ricas folhagens verdes.',
     details: [
@@ -132,11 +126,10 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-Flores do Campo-G',
     name: 'Buquê Flores do Campo G',
-    price: 79.95,
-    originalPrice: 159.90,
+    price: 159.90,
     category: 'buques',
     available: true,
-    tag: '50% OFF no Pix',
+    tag: 'Super Volumoso',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480854/WhatsApp_Image_2026-06-03_at_10.09.58_q8vqlo.jpg',
     images: [
       'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480854/WhatsApp_Image_2026-06-03_at_10.09.58_q8vqlo.jpg',
@@ -157,11 +150,10 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-mi-amoreco',
     name: 'Buquê Mi Amoreco (3x3 Rosas e Girassóis)',
-    price: 84.95,
-    originalPrice: 169.90,
+    price: 169.90,
     category: 'buques',
     available: true,
-    tag: '50% OFF no Pix',
+    tag: 'Rosas e Girassóis',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480853/WhatsApp_Image_2026-06-03_at_10.09.59_1_qybldk.jpg',
     images: [
       'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480853/WhatsApp_Image_2026-06-03_at_10.09.59_1_qybldk.jpg',
@@ -179,11 +171,10 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-mi-amorzao',
     name: 'Buquê Mi Amorzão (6x6 Rosas e Girassóis)',
-    price: 109.95,
-    originalPrice: 219.90,
+    price: 219.90,
     category: 'buques',
     available: true,
-    tag: '50% OFF no Pix',
+    tag: 'Rosas e Girassóis',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480898/WhatsApp_Image_2026-05-22_at_13.06.09_1_qhrpym.jpg',
     images: [
       'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480898/WhatsApp_Image_2026-05-22_at_13.06.09_1_qhrpym.jpg',
@@ -201,11 +192,10 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-minha-vida',
     name: 'Buquê Minha Vida (12x5 Rosas e Girassóis)',
-    price: 159.95,
-    originalPrice: 319.90,
+    price: 319.90,
     category: 'buques',
     available: true,
-    tag: 'Luxo • 50% OFF',
+    tag: 'Luxo',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782482506/12x5_hupldw.png',
     images: [
       'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782482506/12x5_hupldw.png',
@@ -223,11 +213,10 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-solar',
     name: 'Buquê Solar (1 Girassol e 3 Rosas)',
-    price: 74.95,
-    originalPrice: 149.90,
+    price: 149.90,
     category: 'buques',
     available: true,
-    tag: '50% OFF no Pix',
+    tag: 'Delicado',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782481824/1gira3rosas_srwufy.png',
     description: 'Uma combinação leve e cheia de luz, ideal para transmitir otimismo e carinho. Conta com 1 girassol imponente centralizado e 3 rosas vermelhas selecionadas.',
     details: [
@@ -241,11 +230,10 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-solaris-primavera',
     name: 'Buquê Solaris Primavera (3 Girassóis)',
-    price: 99.95,
-    originalPrice: 199.90,
+    price: 199.90,
     category: 'buques',
     available: true,
-    tag: '50% OFF no Pix',
+    tag: 'Vibrante',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782488785/3giras_dx74ou.jpg',
     description: 'Três girassóis vibrantes cercados de mini margaridas brancas, flores silvestres coloridas e folhagens de primavera. Traz luz e um delicioso perfume natural para qualquer ambiente.',
     details: [
@@ -260,11 +248,10 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-te-amo',
     name: 'Buquê Te Amo (6 Girassóis)',
-    price: 104.95,
-    originalPrice: 209.90,
+    price: 209.90,
     category: 'buques',
     available: true,
-    tag: '50% OFF no Pix',
+    tag: 'Amor e Luz',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782489940/WhatsApp_Image_2026-04-16_at_11.52.07_kzigk2.jpg',
     description: 'Demonstre carinho de forma brilhante e inesquecível. Seis girassóis selecionados de hastes fortes e flores perfeitas, envoltos por raminhos de flores brancas e embalagem decorativa premium.',
     details: [
@@ -279,11 +266,10 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-charme-lirios-p',
     name: 'Buquê Charme - Lírios P',
-    price: 104.95,
-    originalPrice: 209.90,
+    price: 209.90,
     category: 'buques',
     available: true,
-    tag: '50% OFF no Pix',
+    tag: 'Sofisticado',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782490230/charme_akrkxo.jpg',
     images: [
       'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782490230/charme_akrkxo.jpg',
@@ -303,11 +289,10 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-namoradeira-lirios-m',
     name: 'Buquê Namoradeira - Lírios M',
-    price: 184.95,
-    originalPrice: 369.90,
+    price: 369.90,
     category: 'buques',
     available: true,
-    tag: '50% OFF no Pix',
+    tag: 'Buquê de cinema',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782490230/namora_g36rzk.png',
     images: [
       'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782490230/namora_g36rzk.png',
