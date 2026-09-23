@@ -5,7 +5,7 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-amor-infinito',
     name: 'Buquê Amor Infinito (18 Rosas)',
-    price: 379.90,
+    price: 359.90,
     category: 'buques',
     available: true,
     tag: 'Premium',
@@ -26,7 +26,7 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-apaixonado',
     name: 'Buquê Apaixonado (12 Rosas)',
-    price: 219.90,
+    price: 199.90,
     category: 'buques',
     available: true,
     tag: 'Mais Vendido',
@@ -48,7 +48,7 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-encantado',
     name: 'Buquê Encantado (6 Rosas)',
-    price: 179.90,
+    price: 159.90,
     category: 'buques',
     available: true,
     tag: 'Clássico',
@@ -71,7 +71,7 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-mimo',
     name: 'Buquê Mimo (03 Rosas)',
-    price: 109.90,
+    price: 89.90,
     category: 'buques',
     available: true,
     tag: 'Delicado',
@@ -88,7 +88,7 @@ export const CATALOG: Product[] = [
   {
     id: 'ramalhete-de-flores',
     name: 'Ramalhete de Flores (2 Flores)',
-    price: 89.90,
+    price: 69.90,
     category: 'buques',
     available: true,
     tag: 'Econômico',
@@ -109,7 +109,7 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-Flores do Campo-m',
     name: 'Buquê Flores do Campo M',
-    price: 129.90,
+    price: 109.90,
     category: 'buques',
     available: true,
     tag: 'Colorido',
@@ -126,7 +126,7 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-Flores do Campo-G',
     name: 'Buquê Flores do Campo G',
-    price: 159.90,
+    price: 139.90,
     category: 'buques',
     available: true,
     tag: 'Super Volumoso',
@@ -150,7 +150,7 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-mi-amoreco',
     name: 'Buquê Mi Amoreco (3x3 Rosas e Girassóis)',
-    price: 169.90,
+    price: 149.90,
     category: 'buques',
     available: true,
     tag: 'Rosas e Girassóis',
@@ -171,7 +171,7 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-mi-amorzao',
     name: 'Buquê Mi Amorzão (6x6 Rosas e Girassóis)',
-    price: 219.90,
+    price: 199.90,
     category: 'buques',
     available: true,
     tag: 'Rosas e Girassóis',
@@ -192,7 +192,7 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-minha-vida',
     name: 'Buquê Minha Vida (12x5 Rosas e Girassóis)',
-    price: 319.90,
+    price: 299.90,
     category: 'buques',
     available: true,
     tag: 'Luxo',
@@ -213,7 +213,7 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-solar',
     name: 'Buquê Solar (1 Girassol e 3 Rosas)',
-    price: 149.90,
+    price: 129.90,
     category: 'buques',
     available: true,
     tag: 'Delicado',
@@ -230,7 +230,7 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-solaris-primavera',
     name: 'Buquê Solaris Primavera (3 Girassóis)',
-    price: 199.90,
+    price: 179.90,
     category: 'buques',
     available: true,
     tag: 'Vibrante',
@@ -248,7 +248,7 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-te-amo',
     name: 'Buquê Te Amo (6 Girassóis)',
-    price: 209.90,
+    price: 189.90,
     category: 'buques',
     available: true,
     tag: 'Amor e Luz',
@@ -266,7 +266,7 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-charme-lirios-p',
     name: 'Buquê Charme - Lírios P',
-    price: 209.90,
+    price: 189.90,
     category: 'buques',
     available: true,
     tag: 'Sofisticado',
@@ -289,7 +289,7 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-namoradeira-lirios-m',
     name: 'Buquê Namoradeira - Lírios M',
-    price: 369.90,
+    price: 349.90,
     category: 'buques',
     available: true,
     tag: 'Buquê de cinema',
