@@ -5,14 +5,14 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-amor-infinito',
     name: 'Buquê Amor Infinito (18 Rosas)',
-    price: 359.90,
+    price: 287.92,
+    originalPrice: 359.90,
     category: 'buques',
     available: true,
     tag: 'Premium',
-    image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782481017/Cat%C3%A1logo_de_Buqu%C3%AAs_j4t5qs.png',
+    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792838/WhatsApp_Image_2026-08-24_at_16.21.49.jpg',
     images: [
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782481017/Cat%C3%A1logo_de_Buqu%C3%AAs_j4t5qs.png',
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787599415/WhatsApp_Image_2026-08-24_at_16.21.49_1_efnntu.jpg'
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792838/WhatsApp_Image_2026-08-24_at_16.21.49.jpg'
     ],
     description: 'Um buquê deslumbrante composto por 18 rosas vermelhas selecionadas, envoltas por delicadas flores de gipsofila (mosquetinho). O presente perfeito para expressar um amor eterno e sem limites.',
     details: [
@@ -26,15 +26,16 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-apaixonado',
     name: 'Buquê Apaixonado (12 Rosas)',
-    price: 199.90,
+    price: 159.92,
+    originalPrice: 199.90,
     category: 'buques',
     available: true,
     tag: 'Mais Vendido',
-    image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480854/WhatsApp_Image_2026-06-08_at_15.09.51_1_wyseqq.jpg',
+    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792859/WhatsApp_Image_2026-08-29_at_09.20.48_1.jpg',
     images: [
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480854/WhatsApp_Image_2026-06-08_at_15.09.51_1_wyseqq.jpg',
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787599416/WhatsApp_Image_2026-08-24_at_16.21.50_1_xbjtyb.jpg',
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787599415/WhatsApp_Image_2026-08-24_at_16.21.46_eunuih.jpg'
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792859/WhatsApp_Image_2026-08-29_at_09.20.48_1.jpg',
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792859/WhatsApp_Image_2026-08-24_at_16.21.46.jpg',
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792860/WhatsApp_Image_2026-08-24_at_16.21.50_1.jpg'
     ],
     description: 'Uma clássica e poderosa declaração de amor com 12 rosas de altíssima qualidade, embaladas harmoniosamente em papel decorativo vermelho texturizado e finalizadas com um lindo laço.',
     details: [
@@ -48,16 +49,15 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-encantado',
     name: 'Buquê Encantado (6 Rosas)',
-    price: 159.90,
+    price: 127.92,
+    originalPrice: 159.90,
     category: 'buques',
     available: true,
     tag: 'Clássico',
-    image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782481543/Cat%C3%A1logo_de_Buqu%C3%AAs_1_tabpda.png',
+    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792833/WhatsApp_Image_2026-06-08_at_15.09.51.jpg',
     images: [
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782481543/Cat%C3%A1logo_de_Buqu%C3%AAs_1_tabpda.png',
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787345617/WhatsApp_Image_2026-08-21_at_17.50.52_vuwduk.jpg',
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787345617/WhatsApp_Image_2026-08-21_at_17.50.53_1_jwbafp.jpg',
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787345617/WhatsApp_Image_2026-08-21_at_17.50.52_1_wdilg5.jpg'
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792833/WhatsApp_Image_2026-06-08_at_15.09.51.jpg',
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790793440/WhatsApp_Image_2026-05-22_at_13.08.03.jpg'
     ],
     description: 'O encanto e delicadeza da simplicidade em um arranjo com 6 rosas vermelhas frescas e ramos de gipsofila, embalado com extremo requinte em papel celofane cristalino.',
     details: [
@@ -71,11 +71,17 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-mimo',
     name: 'Buquê Mimo (03 Rosas)',
-    price: 89.90,
+    price: 71.92,
+    originalPrice: 89.90,
     category: 'buques',
     available: true,
     tag: 'Delicado',
-    image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480853/WhatsApp_Image_2026-06-03_at_10.09.59_2_hl29g6.jpg',
+    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792836/WhatsApp_Image_2026-06-08_at_13.29.17.jpg',
+    images: [
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792836/WhatsApp_Image_2026-06-08_at_13.29.17.jpg',
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790793438/WhatsApp_Image_2026-05-22_at_13.08.03_1.jpg',
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792829/WhatsApp_Image_2026-06-03_at_10.09.59_2.jpg'
+    ],
     description: 'Um gesto carinhoso e sutil composto por 2 a 3 rosas vermelhas selecionadas, acompanhadas por folhagens decorativas e gipsofilas brancas. Ideal para alegrar o dia de alguém querido.',
     details: [
       '03 Rosas  frescas e vívidas',
@@ -88,14 +94,15 @@ export const CATALOG: Product[] = [
   {
     id: 'ramalhete-de-flores',
     name: 'Ramalhete de Flores (2 Flores)',
-    price: 69.90,
+    price: 55.92,
+    originalPrice: 69.90,
     category: 'buques',
     available: true,
     tag: 'Econômico',
-    image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782482070/ramalhete1_hf0eu9.png',
+    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792828/ramalhete1_hf0eu9.png',
     images: [
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782482070/ramalhete1_hf0eu9.png',
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782482071/ramalhete_tmoltt.png'
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792828/ramalhete1_hf0eu9.png',
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792846/WhatsApp_Image_2026-08-29_at_09.20.50.jpg'
     ],
     description: 'Delicadeza pura e minimalista. Duas rosas vermelhas vibrantes com acabamento de folhagens verdes rústicas em um lindo invólucro de papel kraft natural.',
     details: [
@@ -109,11 +116,15 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-Flores do Campo-m',
     name: 'Buquê Flores do Campo M',
-    price: 109.90,
+    price: 87.92,
+    originalPrice: 109.90,
     category: 'buques',
     available: true,
     tag: 'Colorido',
-    image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782489939/WhatsApp_Image_2026-06-11_at_10.42.32_iatar7.jpg',
+    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790793439/WhatsApp_Image_2026-05-22_at_13.08.04.jpg',
+    images: [
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790793439/WhatsApp_Image_2026-05-22_at_13.08.04.jpg'
+    ],
     description: 'Uma maravilhosa explosão de cores e frescor! Mix de flores da estação, crisântemos e margaridas em tons suaves de rosa, branco e lilás com ricas folhagens verdes.',
     details: [
       'Margaridas e Crisântemos selecionados em tons de rosa e lilás',
@@ -126,15 +137,16 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-Flores do Campo-G',
     name: 'Buquê Flores do Campo G',
-    price: 139.90,
+    price: 111.92,
+    originalPrice: 139.90,
     category: 'buques',
     available: true,
     tag: 'Super Volumoso',
-    image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480854/WhatsApp_Image_2026-06-03_at_10.09.58_q8vqlo.jpg',
+    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792835/WhatsApp_Image_2026-08-24_at_15.35.24.jpg',
     images: [
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480854/WhatsApp_Image_2026-06-03_at_10.09.58_q8vqlo.jpg',
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787345617/WhatsApp_Image_2026-08-21_at_17.50.53_2_ryurl1.jpg',
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787596550/WhatsApp_Image_2026-08-24_at_15.35.24_my2slf.jpg'
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792835/WhatsApp_Image_2026-08-24_at_15.35.24.jpg',
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790793440/WhatsApp_Image_2026-05-22_at_13.08.03_3.jpg',
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792840/WhatsApp_Image_2026-08-24_at_16.21.51_1.jpg'
     ],
     description: 'A versão grande, generosa e super volumosa do nosso querido mix de flores do campo. Seleção nobre de flores coloridas da estação para causar uma impressão inesquecível.',
     details: [
@@ -150,14 +162,15 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-mi-amoreco',
     name: 'Buquê Mi Amoreco (3x3 Rosas e Girassóis)',
-    price: 149.90,
+    price: 119.92,
+    originalPrice: 149.90,
     category: 'buques',
-    available: true,
+    available: false,
     tag: 'Rosas e Girassóis',
-    image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480853/WhatsApp_Image_2026-06-03_at_10.09.59_1_qybldk.jpg',
+    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792840/WhatsApp_Image_2026-08-24_at_16.21.47.jpg',
     images: [
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480853/WhatsApp_Image_2026-06-03_at_10.09.59_1_qybldk.jpg',
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787599415/WhatsApp_Image_2026-08-24_at_16.21.47_ggdqhe.jpg'
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792840/WhatsApp_Image_2026-08-24_at_16.21.47.jpg',
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792830/WhatsApp_Image_2026-06-03_at_10.09.59_1.jpg'
     ],
     description: 'A harmonia ideal entre a paixão das rosas vermelhas e a energia brilhante dos girassóis. Contém 3 rosas românticas e 3 girassóis radiantes envolvidos por delicadas flores de gipsofila.',
     details: [
@@ -171,14 +184,15 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-mi-amorzao',
     name: 'Buquê Mi Amorzão (6x6 Rosas e Girassóis)',
-    price: 199.90,
+    price: 159.92,
+    originalPrice: 199.90,
     category: 'buques',
-    available: true,
+    available: false,
     tag: 'Rosas e Girassóis',
-    image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480898/WhatsApp_Image_2026-05-22_at_13.06.09_1_qhrpym.jpg',
+    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792837/WhatsApp_Image_2026-08-24_at_16.21.48.jpg',
     images: [
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782480898/WhatsApp_Image_2026-05-22_at_13.06.09_1_qhrpym.jpg',
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787599416/WhatsApp_Image_2026-08-24_at_16.21.50_gjqvtm.jpg'
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792837/WhatsApp_Image_2026-08-24_at_16.21.48.jpg',
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792836/WhatsApp_Image_2026-08-24_at_16.21.47_1.jpg'
     ],
     description: 'Um arranjo espetacular com 6 belas rosas vermelhas e 6 girassóis grandes abertos e cheios de luz, complementados por raminhos de gipsofila branca e embalagem especial.',
     details: [
@@ -192,14 +206,14 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-minha-vida',
     name: 'Buquê Minha Vida (12x5 Rosas e Girassóis)',
-    price: 299.90,
+    price: 239.92,
+    originalPrice: 299.90,
     category: 'buques',
-    available: true,
+    available: false,
     tag: 'Luxo',
-    image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782482506/12x5_hupldw.png',
+    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792843/WhatsApp_Image_2026-08-29_at_09.20.48.jpg',
     images: [
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782482506/12x5_hupldw.png',
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787599415/WhatsApp_Image_2026-08-24_at_16.21.48_n7fzhp.jpg'
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792843/WhatsApp_Image_2026-08-29_at_09.20.48.jpg'
     ],
     description: 'Uma exuberante homenagem para quem é a sua vida inteira. Combina 12 rosas vermelhas de luxo com 5 girassóis gigantes, folhagens nobres e flores gipsofila de acabamento.',
     details: [
@@ -211,28 +225,12 @@ export const CATALOG: Product[] = [
     ]
   },
   {
-    id: 'buque-solar',
-    name: 'Buquê Solar (1 Girassol e 3 Rosas)',
-    price: 129.90,
-    category: 'buques',
-    available: true,
-    tag: 'Delicado',
-    image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782481824/1gira3rosas_srwufy.png',
-    description: 'Uma combinação leve e cheia de luz, ideal para transmitir otimismo e carinho. Conta com 1 girassol imponente centralizado e 3 rosas vermelhas selecionadas.',
-    details: [
-      '1 Girassol centralizado e imponente',
-      '3 Rosas vermelhas selecionadas de excelente abertura',
-      'Folhagem verde e embalagem artesanal rústica',
-      'Laço de ráfia natural',
-      'Acompanha cartão com sua mensagem'
-    ]
-  },
-  {
     id: 'buque-solaris-primavera',
     name: 'Buquê Solaris Primavera (3 Girassóis)',
-    price: 179.90,
+    price: 143.92,
+    originalPrice: 179.90,
     category: 'buques',
-    available: true,
+    available: false,
     tag: 'Vibrante',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782488785/3giras_dx74ou.jpg',
     description: 'Três girassóis vibrantes cercados de mini margaridas brancas, flores silvestres coloridas e folhagens de primavera. Traz luz e um delicioso perfume natural para qualquer ambiente.',
@@ -248,9 +246,10 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-te-amo',
     name: 'Buquê Te Amo (6 Girassóis)',
-    price: 189.90,
+    price: 151.92,
+    originalPrice: 189.90,
     category: 'buques',
-    available: true,
+    available: false,
     tag: 'Amor e Luz',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782489940/WhatsApp_Image_2026-04-16_at_11.52.07_kzigk2.jpg',
     description: 'Demonstre carinho de forma brilhante e inesquecível. Seis girassóis selecionados de hastes fortes e flores perfeitas, envoltos por raminhos de flores brancas e embalagem decorativa premium.',
@@ -266,16 +265,15 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-charme-lirios-p',
     name: 'Buquê Charme - Lírios P',
-    price: 189.90,
+    price: 151.92,
+    originalPrice: 189.90,
     category: 'buques',
-    available: true,
+    available: false,
     tag: 'Sofisticado',
-    image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782490230/charme_akrkxo.jpg',
+    image: 'https://res.cloudinary.com/uepofhc6/image/upload/f_auto,q_auto/lirio1',
     images: [
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782490230/charme_akrkxo.jpg',
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787345618/WhatsApp_Image_2026-08-21_at_17.50.54_dxlwwb.jpg',
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787594206/ChatGPT_Image_24_de_ago._de_2026_09_40_28_qbvroy.png',
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787594206/ChatGPT_Image_24_de_ago._de_2026_09_40_39_laoawq.png'
+      'https://res.cloudinary.com/uepofhc6/image/upload/f_auto,q_auto/lirio1',
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792766/lirio2.png'
     ],
     description: 'Toda a elegância escultural e sofisticação dos lírios em tons suaves de rosa e branco. Um buquê compacto, charmoso e de perfume incrivelmente marcante.',
     details: [
@@ -289,9 +287,10 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-namoradeira-lirios-m',
     name: 'Buquê Namoradeira - Lírios M',
-    price: 349.90,
+    price: 279.92,
+    originalPrice: 349.90,
     category: 'buques',
-    available: true,
+    available: false,
     tag: 'Buquê de cinema',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782490230/namora_g36rzk.png',
     images: [

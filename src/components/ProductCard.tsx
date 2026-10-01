@@ -78,6 +78,13 @@ export default function ProductCard({
               {product.tag}
             </span>
           )}
+
+          {/* Promotional 20% OFF badge */}
+          {product.originalPrice && product.originalPrice > product.price && (
+            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-black bg-amber-500 text-white shadow-sm uppercase tracking-wider self-start">
+              ⚡ 20% OFF
+            </span>
+          )}
         </div>
 
         {/* Favorite Button Overlay */}
@@ -134,6 +141,11 @@ export default function ProductCard({
             <span className="text-2xl font-bold font-sans text-rose-700">
               {formatBRL(product.price)}
             </span>
+            {product.originalPrice && product.originalPrice > product.price && (
+              <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
+                -20%
+              </span>
+            )}
             {product.category === 'buques' && product.price > 180 && (
               <span className="text-[10px] text-zinc-400 ml-1">ou 3x de {formatBRL(product.price / 3)}</span>
             )}
@@ -143,7 +155,7 @@ export default function ProductCard({
           <div className="flex flex-col gap-2" id={`actions-${product.id}`}>
             {product.available ? (
               <a
-                href={`https://wa.me/5522999301051?text=${encodeURIComponent(`Olá! Gostaria de fazer a encomenda do seguinte item do catálogo:\n🌹 *${product.name}*\nPreço: R$ ${product.price.toFixed(2).replace('.', ',')}`)}`}
+                href={`https://wa.me/5522999301051?text=${encodeURIComponent(`Olá! Gostaria de fazer a encomenda do seguinte item com desconto de 20%:\n🌹 *${product.name}*\nPreço promocional: R$ ${product.price.toFixed(2).replace('.', ',')}${product.originalPrice ? ` (De R$ ${product.originalPrice.toFixed(2).replace('.', ',')})` : ''}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white w-full py-2.5 rounded-xl text-xs font-bold shadow-md hover:shadow-lg transition duration-200"
@@ -153,7 +165,7 @@ export default function ProductCard({
               </a>
             ) : (
               <a
-                href={`https://wa.me/5522999301051?text=${encodeURIComponent(`Olá! Gostaria de consultar sobre o item:\n🌹 *${product.name}* (Esgotado para hoje)\nPreço de referência: R$ ${product.price.toFixed(2).replace('.', ',')}\nGostaria de encomendar para outra data!`)}`}
+                href={`https://wa.me/5522999301051?text=${encodeURIComponent(`Olá! Gostaria de consultar sobre o item:\n🌹 *${product.name}* (Esgotado para hoje)\nPreço promocional de referência: R$ ${product.price.toFixed(2).replace('.', ',')}${product.originalPrice ? ` (De R$ ${product.originalPrice.toFixed(2).replace('.', ',')})` : ''}\nGostaria de encomendar para outra data!`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-[#7F0000] hover:bg-[#660000] text-white w-full py-2.5 rounded-xl text-xs font-bold shadow transition duration-200"

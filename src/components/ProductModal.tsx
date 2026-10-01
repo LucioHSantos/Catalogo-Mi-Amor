@@ -197,6 +197,11 @@ export default function ProductModal({
                   <span className="text-3xl font-extrabold font-sans text-rose-700">
                     {formatBRL(product.price * quantity)}
                   </span>
+                  {product.originalPrice && product.originalPrice > product.price && (
+                    <span className="text-xs font-bold text-white bg-emerald-600 px-2.5 py-0.5 rounded-full shadow-xs">
+                      20% DE DESCONTO
+                    </span>
+                  )}
                   {quantity > 1 && (
                     <span className="text-sm text-zinc-400">
                       ({formatBRL(product.price)} cada)

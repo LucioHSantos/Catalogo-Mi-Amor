@@ -55,7 +55,11 @@ export default function CartDrawer({
     let itemsText = '';
     cartItems.forEach((item) => {
       const itemTotal = item.product.price * item.quantity;
-      itemsText += `• *${item.quantity}x ${item.product.name}*\n  _Preço: ${formatBRL(item.product.price)} cada_\n  _Subtotal: ${formatBRL(itemTotal)}_\n\n`;
+      const isPromo = item.product.originalPrice && item.product.originalPrice > item.product.price;
+      const priceDescription = isPromo
+        ? `_Preço Promocional (20% OFF): ${formatBRL(item.product.price)} (De ~${formatBRL(item.product.originalPrice!)}~)_`
+        : `_Preço: ${formatBRL(item.product.price)} cada_`;
+      itemsText += `• *${item.quantity}x ${item.product.name}*\n  ${priceDescription}\n  _Subtotal: ${formatBRL(itemTotal)}_\n\n`;
     });
 
     // Formatting recipient & delivery info

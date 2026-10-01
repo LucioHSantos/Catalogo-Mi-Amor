@@ -47,6 +47,15 @@ export default function Header({
 
   return (
     <header className="relative w-full bg-white border-b border-rose-100" id="shop-header">
+      {/* Top Promotional Bar */}
+      <div className="bg-gradient-to-r from-rose-700 via-rose-600 to-rose-700 text-white py-2 px-4 text-center text-xs md:text-sm font-semibold tracking-wide flex items-center justify-center gap-2 shadow-inner">
+        <Sparkles className="w-4 h-4 text-amber-300 animate-pulse shrink-0" />
+        <span>PROMOÇÃO ESPECIAL: <strong>20% DE DESCONTO</strong> EM TODOS OS BUQUÊS! 💐</span>
+        <span className="hidden sm:inline bg-white/20 text-white px-2 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider ml-1">
+          Aproveite Hoje
+        </span>
+      </div>
+
       {/* Visual Ambient Background Hero */}
       <div className="relative h-64 md:h-80 w-full overflow-hidden bg-rose-950" id="hero-banner">
         <img

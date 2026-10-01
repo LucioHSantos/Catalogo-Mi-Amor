@@ -99,7 +99,11 @@ export default function App() {
     text += `Olá! Fiquei muito interessado(a) no seguinte produto do catálogo:\n\n`;
     text += `• *${quantity}x ${product.name}${optionText}*\n`;
     text += `  _Status: ${availabilityBadge}_\n`;
-    text += `  _Valor Unitário: R$ ${product.price.toFixed(2).replace('.', ',')}_\n`;
+    if (product.originalPrice && product.originalPrice > product.price) {
+      text += `  _Valor Promocional (20% OFF): R$ ${product.price.toFixed(2).replace('.', ',')} (De R$ ${product.originalPrice.toFixed(2).replace('.', ',')})_\n`;
+    } else {
+      text += `  _Valor Unitário: R$ ${product.price.toFixed(2).replace('.', ',')}_\n`;
+    }
     text += `  _Subtotal: ${totalVal}_\n\n`;
     if (selectedImage) {
       text += `  _Link da imagem escolhida:_ ${selectedImage}\n\n`;
@@ -111,9 +115,12 @@ export default function App() {
     window.open(`https://api.whatsapp.com/send?phone=${whatsAppNumber}&text=${encoded}`, '_blank', 'referrerPolicy=no-referrer');
   };
 
-  // Filter Catalog logic based on Category, Search query and Sorting (shows all products with availability badges)
+  // Filter Catalog logic based on Category, Search query and Sorting
   const filteredProducts = React.useMemo(() => {
     let result = [...CATALOG];
+
+    // Ocultar buquês esgotados (disponibilidade false) conforme solicitado
+    result = result.filter((p) => !(p.category === 'buques' && p.available === false));
 
     // 1. Filter by category
     if (selectedCategory !== 'all') {
