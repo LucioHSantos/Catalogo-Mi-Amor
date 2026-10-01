@@ -5,8 +5,7 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-amor-infinito',
     name: 'Buquê Amor Infinito (18 Rosas)',
-    price: 287.92,
-    originalPrice: 359.90,
+    price: 359.90,
     category: 'buques',
     available: true,
     tag: 'Premium',
@@ -26,8 +25,7 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-apaixonado',
     name: 'Buquê Apaixonado (12 Rosas)',
-    price: 159.92,
-    originalPrice: 199.90,
+    price: 199.90,
     category: 'buques',
     available: true,
     tag: 'Mais Vendido',
@@ -49,8 +47,7 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-encantado',
     name: 'Buquê Encantado (6 Rosas)',
-    price: 127.92,
-    originalPrice: 159.90,
+    price: 159.90,
     category: 'buques',
     available: true,
     tag: 'Clássico',
@@ -71,8 +68,7 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-mimo',
     name: 'Buquê Mimo (03 Rosas)',
-    price: 71.92,
-    originalPrice: 89.90,
+    price: 89.90,
     category: 'buques',
     available: true,
     tag: 'Delicado',
@@ -94,8 +90,7 @@ export const CATALOG: Product[] = [
   {
     id: 'ramalhete-de-flores',
     name: 'Ramalhete de Flores (2 Flores)',
-    price: 55.92,
-    originalPrice: 69.90,
+    price: 69.90,
     category: 'buques',
     available: true,
     tag: 'Econômico',
@@ -116,8 +111,7 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-Flores do Campo-m',
     name: 'Buquê Flores do Campo M',
-    price: 87.92,
-    originalPrice: 109.90,
+    price: 109.90,
     category: 'buques',
     available: true,
     tag: 'Colorido',
@@ -137,8 +131,7 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-Flores do Campo-G',
     name: 'Buquê Flores do Campo G',
-    price: 111.92,
-    originalPrice: 139.90,
+    price: 139.90,
     category: 'buques',
     available: true,
     tag: 'Super Volumoso',
@@ -162,10 +155,9 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-mi-amoreco',
     name: 'Buquê Mi Amoreco (3x3 Rosas e Girassóis)',
-    price: 119.92,
-    originalPrice: 149.90,
+    price: 149.90,
     category: 'buques',
-    available: false,
+    available: true,
     tag: 'Rosas e Girassóis',
     image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792840/WhatsApp_Image_2026-08-24_at_16.21.47.jpg',
     images: [
@@ -184,10 +176,9 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-mi-amorzao',
     name: 'Buquê Mi Amorzão (6x6 Rosas e Girassóis)',
-    price: 159.92,
-    originalPrice: 199.90,
+    price: 199.90,
     category: 'buques',
-    available: false,
+    available: true,
     tag: 'Rosas e Girassóis',
     image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792837/WhatsApp_Image_2026-08-24_at_16.21.48.jpg',
     images: [
@@ -206,10 +197,9 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-minha-vida',
     name: 'Buquê Minha Vida (12x5 Rosas e Girassóis)',
-    price: 239.92,
-    originalPrice: 299.90,
+    price: 299.90,
     category: 'buques',
-    available: false,
+    available: true,
     tag: 'Luxo',
     image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792843/WhatsApp_Image_2026-08-29_at_09.20.48.jpg',
     images: [
@@ -227,10 +217,9 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-solaris-primavera',
     name: 'Buquê Solaris Primavera (3 Girassóis)',
-    price: 143.92,
-    originalPrice: 179.90,
+    price: 179.90,
     category: 'buques',
-    available: false,
+    available: true,
     tag: 'Vibrante',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782488785/3giras_dx74ou.jpg',
     description: 'Três girassóis vibrantes cercados de mini margaridas brancas, flores silvestres coloridas e folhagens de primavera. Traz luz e um delicioso perfume natural para qualquer ambiente.',
@@ -246,10 +235,9 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-te-amo',
     name: 'Buquê Te Amo (6 Girassóis)',
-    price: 151.92,
-    originalPrice: 189.90,
+    price: 189.90,
     category: 'buques',
-    available: false,
+    available: true,
     tag: 'Amor e Luz',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782489940/WhatsApp_Image_2026-04-16_at_11.52.07_kzigk2.jpg',
     description: 'Demonstre carinho de forma brilhante e inesquecível. Seis girassóis selecionados de hastes fortes e flores perfeitas, envoltos por raminhos de flores brancas e embalagem decorativa premium.',
@@ -265,10 +253,9 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-charme-lirios-p',
     name: 'Buquê Charme - Lírios P',
-    price: 151.92,
-    originalPrice: 189.90,
+    price: 189.90,
     category: 'buques',
-    available: false,
+    available: true,
     tag: 'Sofisticado',
     image: 'https://res.cloudinary.com/uepofhc6/image/upload/f_auto,q_auto/lirio1',
     images: [
@@ -287,10 +274,9 @@ export const CATALOG: Product[] = [
   {
     id: 'buque-namoradeira-lirios-m',
     name: 'Buquê Namoradeira - Lírios M',
-    price: 279.92,
-    originalPrice: 349.90,
+    price: 349.90,
     category: 'buques',
-    available: false,
+    available: true,
     tag: 'Buquê de cinema',
     image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782490230/namora_g36rzk.png',
     images: [

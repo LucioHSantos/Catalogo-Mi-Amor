@@ -199,7 +199,7 @@ export default function ProductModal({
                   </span>
                   {product.originalPrice && product.originalPrice > product.price && (
                     <span className="text-xs font-bold text-white bg-emerald-600 px-2.5 py-0.5 rounded-full shadow-xs">
-                      20% DE DESCONTO
+                      {Math.round((1 - product.price / product.originalPrice) * 100)}% DE DESCONTO
                     </span>
                   )}
                   {quantity > 1 && (

@@ -100,7 +100,7 @@ export default function App() {
     text += `• *${quantity}x ${product.name}${optionText}*\n`;
     text += `  _Status: ${availabilityBadge}_\n`;
     if (product.originalPrice && product.originalPrice > product.price) {
-      text += `  _Valor Promocional (20% OFF): R$ ${product.price.toFixed(2).replace('.', ',')} (De R$ ${product.originalPrice.toFixed(2).replace('.', ',')})_\n`;
+      text += `  _Valor Promocional: R$ ${product.price.toFixed(2).replace('.', ',')} (De R$ ${product.originalPrice.toFixed(2).replace('.', ',')})_\n`;
     } else {
       text += `  _Valor Unitário: R$ ${product.price.toFixed(2).replace('.', ',')}_\n`;
     }

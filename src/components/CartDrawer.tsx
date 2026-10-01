@@ -57,7 +57,7 @@ export default function CartDrawer({
       const itemTotal = item.product.price * item.quantity;
       const isPromo = item.product.originalPrice && item.product.originalPrice > item.product.price;
       const priceDescription = isPromo
-        ? `_Preço Promocional (20% OFF): ${formatBRL(item.product.price)} (De ~${formatBRL(item.product.originalPrice!)}~)_`
+        ? `_Preço Promocional: ${formatBRL(item.product.price)} (De ~${formatBRL(item.product.originalPrice!)}~)_`
         : `_Preço: ${formatBRL(item.product.price)} cada_`;
       itemsText += `• *${item.quantity}x ${item.product.name}*\n  ${priceDescription}\n  _Subtotal: ${formatBRL(itemTotal)}_\n\n`;
     });
