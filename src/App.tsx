@@ -6,12 +6,12 @@ import ProductModal from './components/ProductModal';
 import CartDrawer from './components/CartDrawer';
 import Logo from './components/Logo';
 import { CATALOG } from './data';
-import { Product, CartItem } from './types';
+import { Product, CartItem, FlowerCategory } from './types';
 
 export default function App() {
   // Primary Search and Filter States
   const [searchQuery, setSearchQuery] = React.useState('');
-  const [selectedCategory, setSelectedCategory] = React.useState<'all' | 'buques' | 'cestas'>('all');
+  const [selectedCategory, setSelectedCategory] = React.useState<FlowerCategory>('all');
   const [sortBy, setSortBy] = React.useState<'recommended' | 'price-asc' | 'price-desc'>('recommended');
   
   // WhatsApp Configuration (Fixed phone: 5522999301051 as requested)
@@ -119,12 +119,21 @@ export default function App() {
   const filteredProducts = React.useMemo(() => {
     let result = [...CATALOG];
 
-    // Ocultar buquês esgotados (disponibilidade false) conforme solicitado
+    // Ocultar totalmente cestas para os clientes conforme solicitado
+    result = result.filter((p) => p.category !== 'cestas');
+
+    // Ocultar buquês esgotados (disponibilidade false)
     result = result.filter((p) => !(p.category === 'buques' && p.available === false));
 
     // 1. Filter by category
-    if (selectedCategory !== 'all') {
-      result = result.filter((p) => p.category === selectedCategory);
+    if (selectedCategory === 'rosas') {
+      result = result.filter((p) => p.name.toLowerCase().includes('rosa') || p.description.toLowerCase().includes('rosa'));
+    } else if (selectedCategory === 'girassois') {
+      result = result.filter((p) => p.name.toLowerCase().includes('girass') || p.description.toLowerCase().includes('girass'));
+    } else if (selectedCategory === 'campo') {
+      result = result.filter((p) => p.name.toLowerCase().includes('campo') || p.description.toLowerCase().includes('campo'));
+    } else if (selectedCategory === 'lirios') {
+      result = result.filter((p) => p.name.toLowerCase().includes('lírio') || p.name.toLowerCase().includes('lirio'));
     }
 
     // 2. Filter by search query (case-insensitive on name, description, details or tags)
@@ -179,8 +188,8 @@ export default function App() {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 bg-white p-4 rounded-xl border border-rose-100/50">
           <div className="text-sm">
             Mostrando <span className="font-bold text-rose-700">{filteredProducts.length}</span>{' '}
-            {filteredProducts.length === 1 ? 'opção exclusiva' : 'opções exclusivas'}{' '}
-            {selectedCategory === 'buques' ? 'de buquês' : selectedCategory === 'cestas' ? 'de cestas' : 'de presentes'}
+            {filteredProducts.length === 1 ? 'buquê exclusivo' : 'buquês exclusivos'}{' '}
+            {selectedCategory === 'all' ? 'no catálogo' : 'na categoria selecionada'}
           </div>
 
           {/* Quick toggle info block */}
@@ -194,7 +203,7 @@ export default function App() {
         {filteredProducts.length === 0 ? (
           <div className="flex flex-col items-center justify-center text-center py-16 px-4 bg-white rounded-2xl border border-rose-100/80">
             <div className="text-rose-300 text-5xl mb-4">🔍</div>
-            <h3 className="font-serif text-xl font-bold text-rose-950">Nenhum buquê ou cesta encontrado</h3>
+            <h3 className="font-serif text-xl font-bold text-rose-950">Nenhum buquê encontrado</h3>
             <p className="text-sm text-zinc-500 max-w-md mt-2 font-light leading-relaxed">
               Não encontramos resultados correspondentes a "{searchQuery}" com as opções de filtros selecionadas.
             </p>
@@ -215,10 +224,10 @@ export default function App() {
                 Buscar "Rosas"
               </button>
               <button
-                onClick={() => setSearchQuery('Cesta')}
+                onClick={() => setSearchQuery('Girassol')}
                 className="bg-rose-50 hover:bg-rose-100 text-rose-800 text-xs font-semibold px-4 py-2.5 rounded-xl transition border border-rose-200"
               >
-                Buscar "Cesta"
+                Buscar "Girassol"
               </button>
             </div>
           </div>
@@ -255,7 +264,7 @@ export default function App() {
                 </h3>
               </div>
               <p className="text-xs text-rose-200/75 leading-relaxed font-light">
-                Levando amor, alegria e sofisticação em forma de arranjos florais únicos e cestas premium de presentes ou datas comemorativas. Cada detalhe é feito com o coração.
+                Levando amor, alegria e sofisticação em forma de arranjos florais únicos e buquês de flores selecionadas. Cada detalhe é feito com o coração.
               </p>
               <div className="flex items-center gap-3 mt-5 text-rose-300">
                 <span className="text-xs font-bold uppercase tracking-wider text-white">Siga-nos:</span>
@@ -271,7 +280,7 @@ export default function App() {
               <ul className="space-y-2 text-xs text-rose-200/80 font-light">
                 <li className="flex items-start gap-1.5">
                   <span className="text-rose-400">1.</span>
-                  <span>Escolha os buquês e cestas desejadas no catálogo.</span>
+                  <span>Escolha os buquês desejados no catálogo.</span>
                 </li>
                 <li className="flex items-start gap-1.5">
                   <span className="text-rose-400">2.</span>

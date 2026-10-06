@@ -53,8 +53,7 @@ export const CATALOG: Product[] = [
     tag: 'Clássico',
     image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792833/WhatsApp_Image_2026-06-08_at_15.09.51.jpg',
     images: [
-      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792833/WhatsApp_Image_2026-06-08_at_15.09.51.jpg',
-      'https://res.cloudinary.com/uepofhc6/image/upload/v1790793440/WhatsApp_Image_2026-05-22_at_13.08.03.jpg'
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792833/WhatsApp_Image_2026-06-08_at_15.09.51.jpg'
     ],
     description: 'O encanto e delicadeza da simplicidade em um arranjo com 6 rosas vermelhas frescas e ramos de gipsofila, embalado com extremo requinte em papel celofane cristalino.',
     details: [

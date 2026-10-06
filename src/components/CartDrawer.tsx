@@ -134,7 +134,7 @@ export default function CartDrawer({
                   </div>
                   <h3 className="font-serif text-lg font-bold text-rose-950">Sua sacola está vazia</h3>
                   <p className="text-xs text-zinc-500 max-w-xs leading-relaxed font-light">
-                    Navegue pelas nossas opções de buquês e cestas especiais e adicione-os aqui para montar seu pedido.
+                    Navegue pelas nossas opções de buquês especiais e adicione-os aqui para montar seu pedido.
                   </p>
                   <button
                     onClick={onClose}

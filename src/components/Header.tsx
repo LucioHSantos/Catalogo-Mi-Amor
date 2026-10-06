@@ -1,12 +1,13 @@
 import React from 'react';
 import { Search, Flower, Clock, MapPin, Sparkles, Filter, SlidersHorizontal } from 'lucide-react';
 import Logo from './Logo';
+import { FlowerCategory } from '../types';
 
 interface HeaderProps {
   searchQuery: string;
   setSearchQuery: (query: string) => void;
-  selectedCategory: 'all' | 'buques' | 'cestas';
-  setSelectedCategory: (category: 'all' | 'buques' | 'cestas') => void;
+  selectedCategory: FlowerCategory;
+  setSelectedCategory: (category: FlowerCategory) => void;
   sortBy: 'recommended' | 'price-asc' | 'price-desc';
   setSortBy: (sort: 'recommended' | 'price-asc' | 'price-desc') => void;
   whatsAppNumber: string;
@@ -47,15 +48,6 @@ export default function Header({
 
   return (
     <header className="relative w-full bg-white border-b border-rose-100" id="shop-header">
-      {/* Top Announcement Bar */}
-      <div className="bg-gradient-to-r from-rose-700 via-rose-600 to-rose-700 text-white py-2 px-4 text-center text-xs md:text-sm font-semibold tracking-wide flex items-center justify-center gap-2 shadow-inner">
-        <Sparkles className="w-4 h-4 text-amber-300 animate-pulse shrink-0" />
-        <span>FLORES FRESCAS SELECIONADAS & PRONTA-ENTREGA NA REGIÃO 💐</span>
-        <span className="hidden sm:inline bg-white/20 text-white px-2 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider ml-1">
-          Peça pelo WhatsApp
-        </span>
-      </div>
-
       {/* Visual Ambient Background Hero */}
       <div className="relative h-64 md:h-80 w-full overflow-hidden bg-rose-950" id="hero-banner">
         <img
@@ -81,7 +73,7 @@ export default function Header({
             </h1>
           </div>
           <p className="text-rose-100/90 font-sans text-sm md:text-base max-w-2xl mt-3 font-light">
-            Especialistas em criar momentos inesquecíveis. Buquês exclusivos, cestas luxuosas de presentes e chocolates, e arranjos repletos de sentimento.
+            Especialistas em criar momentos inesquecíveis. Buquês exclusivos, rosas selecionadas e arranjos florais repletos de sentimento.
           </p>
         </div>
       </div>
@@ -121,39 +113,61 @@ export default function Header({
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           
           {/* Categories Tab selector */}
-          <div className="flex bg-rose-50 p-1 rounded-xl self-start" id="category-selector">
+          <div className="flex flex-wrap bg-rose-50 p-1 rounded-xl self-start gap-1" id="category-selector">
             <button
               onClick={() => setSelectedCategory('all')}
-              className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition duration-200 ${
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs md:text-sm font-medium transition duration-200 ${
                 selectedCategory === 'all'
                   ? 'bg-rose-600 text-white shadow-sm'
                   : 'text-rose-800 hover:bg-rose-100/50'
               }`}
             >
               <Flower className="w-4 h-4" />
-              Todos ({selectedCategory === 'all' ? 'Ver Todos' : 'Ver'})
+              Todos os Buquês
             </button>
             <button
-              onClick={() => setSelectedCategory('buques')}
-              className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition duration-200 ${
-                selectedCategory === 'buques'
+              onClick={() => setSelectedCategory('rosas')}
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs md:text-sm font-medium transition duration-200 ${
+                selectedCategory === 'rosas'
                   ? 'bg-rose-600 text-white shadow-sm'
                   : 'text-rose-800 hover:bg-rose-100/50'
               }`}
             >
               <span>🌹</span>
-              Buquês
+              Rosas
             </button>
             <button
-              onClick={() => setSelectedCategory('cestas')}
-              className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition duration-200 ${
-                selectedCategory === 'cestas'
+              onClick={() => setSelectedCategory('girassois')}
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs md:text-sm font-medium transition duration-200 ${
+                selectedCategory === 'girassois'
                   ? 'bg-rose-600 text-white shadow-sm'
                   : 'text-rose-800 hover:bg-rose-100/50'
               }`}
             >
-              <span>🎁</span>
-              Cestas de Presente
+              <span>🌻</span>
+              Girassóis
+            </button>
+            <button
+              onClick={() => setSelectedCategory('campo')}
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs md:text-sm font-medium transition duration-200 ${
+                selectedCategory === 'campo'
+                  ? 'bg-rose-600 text-white shadow-sm'
+                  : 'text-rose-800 hover:bg-rose-100/50'
+              }`}
+            >
+              <span>💐</span>
+              Flores do Campo
+            </button>
+            <button
+              onClick={() => setSelectedCategory('lirios')}
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs md:text-sm font-medium transition duration-200 ${
+                selectedCategory === 'lirios'
+                  ? 'bg-rose-600 text-white shadow-sm'
+                  : 'text-rose-800 hover:bg-rose-100/50'
+              }`}
+            >
+              <span>🤍</span>
+              Lírios
             </button>
           </div>
 
@@ -162,7 +176,7 @@ export default function Header({
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-rose-400" />
             <input
               type="text"
-              placeholder="Buscar buquê, rosa, girassol, chocolates..."
+              placeholder="Buscar buquê, rosa, girassol, flor do campo, lírios..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full bg-rose-50/20 border border-rose-100 rounded-xl pl-9 pr-4 py-2.5 text-sm placeholder-rose-400 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-rose-500 text-rose-950 transition"
