@@ -33,7 +33,8 @@ export const CATALOG: Product[] = [
     images: [
       'https://res.cloudinary.com/uepofhc6/image/upload/v1790792859/WhatsApp_Image_2026-08-29_at_09.20.48_1.jpg',
       'https://res.cloudinary.com/uepofhc6/image/upload/v1790792859/WhatsApp_Image_2026-08-24_at_16.21.46.jpg',
-      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792860/WhatsApp_Image_2026-08-24_at_16.21.50_1.jpg'
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792860/WhatsApp_Image_2026-08-24_at_16.21.50_1.jpg',
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1791402700/WhatsApp_Image_2026-10-06_at_16.41.06.jpg'
     ],
     description: 'Uma clássica e poderosa declaração de amor com 12 rosas de altíssima qualidade, embaladas harmoniosamente em papel decorativo vermelho texturizado e finalizadas com um lindo laço.',
     details: [
@@ -51,9 +52,11 @@ export const CATALOG: Product[] = [
     category: 'buques',
     available: true,
     tag: 'Clássico',
-    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792833/WhatsApp_Image_2026-06-08_at_15.09.51.jpg',
+    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1791402697/WhatsApp_Image_2026-10-02_at_15.47.07_1.jpg',
     images: [
-      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792833/WhatsApp_Image_2026-06-08_at_15.09.51.jpg'
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1791402697/WhatsApp_Image_2026-10-02_at_15.47.07_1.jpg',
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1791402697/WhatsApp_Image_2026-10-02_at_15.47.07_2.jpg',
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1791402697/WhatsApp_Image_2026-10-02_at_15.47.08_1.jpg'
     ],
     description: 'O encanto e delicadeza da simplicidade em um arranjo com 6 rosas vermelhas frescas e ramos de gipsofila, embalado com extremo requinte em papel celofane cristalino.',
     details: [
@@ -71,10 +74,11 @@ export const CATALOG: Product[] = [
     category: 'buques',
     available: true,
     tag: 'Delicado',
-    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790793438/WhatsApp_Image_2026-05-22_at_13.08.03_1.jpg',
+    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1791402696/10.png',
     images: [
-      'https://res.cloudinary.com/uepofhc6/image/upload/v1790793438/WhatsApp_Image_2026-05-22_at_13.08.03_1.jpg',
-      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792829/WhatsApp_Image_2026-06-03_at_10.09.59_2.jpg'
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1791402696/10.png',
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1791402699/WhatsApp_Image_2026-10-06_at_16.36.02.jpg',
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1791402697/WhatsApp_Image_2026-09-30_at_16.15.04.jpg'
     ],
     description: 'Um gesto carinhoso e sutil composto por 2 a 3 rosas vermelhas selecionadas, acompanhadas por folhagens decorativas e gipsofilas brancas. Ideal para alegrar o dia de alguém querido.',
     details: [
@@ -95,7 +99,7 @@ export const CATALOG: Product[] = [
     image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792828/ramalhete1_hf0eu9.png',
     images: [
       'https://res.cloudinary.com/uepofhc6/image/upload/v1790792828/ramalhete1_hf0eu9.png',
-      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792846/WhatsApp_Image_2026-08-29_at_09.20.50.jpg'
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1791402696/12.png'
     ],
     description: 'Delicadeza pura e minimalista. Duas rosas vermelhas vibrantes com acabamento de folhagens verdes rústicas em um lindo invólucro de papel kraft natural.',
     details: [
@@ -157,10 +161,10 @@ export const CATALOG: Product[] = [
     category: 'buques',
     available: true,
     tag: 'Rosas e Girassóis',
-    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792840/WhatsApp_Image_2026-08-24_at_16.21.47.jpg',
+    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1791402696/11.png',
     images: [
-      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792840/WhatsApp_Image_2026-08-24_at_16.21.47.jpg',
-      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792830/WhatsApp_Image_2026-06-03_at_10.09.59_1.jpg'
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1791402696/11.png',
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1791402696/6.png'
     ],
     description: 'A harmonia ideal entre a paixão das rosas vermelhas e a energia brilhante dos girassóis. Contém 3 rosas românticas e 3 girassóis radiantes envolvidos por delicadas flores de gipsofila.',
     details: [
@@ -178,10 +182,10 @@ export const CATALOG: Product[] = [
     category: 'buques',
     available: true,
     tag: 'Rosas e Girassóis',
-    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792837/WhatsApp_Image_2026-08-24_at_16.21.48.jpg',
+    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1791402696/5.png',
     images: [
-      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792837/WhatsApp_Image_2026-08-24_at_16.21.48.jpg',
-      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792836/WhatsApp_Image_2026-08-24_at_16.21.47_1.jpg'
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1791402696/5.png',
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1791402696/3.png'
     ],
     description: 'Um arranjo espetacular com 6 belas rosas vermelhas e 6 girassóis grandes abertos e cheios de luz, complementados por raminhos de gipsofila branca e embalagem especial.',
     details: [
@@ -276,11 +280,9 @@ export const CATALOG: Product[] = [
     category: 'buques',
     available: true,
     tag: 'Buquê de cinema',
-    image: 'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782490230/namora_g36rzk.png',
+    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1791402696/4.png',
     images: [
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1782490230/namora_g36rzk.png',
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787345617/WhatsApp_Image_2026-08-21_at_17.50.53_mdnuq2.jpg',
-      'https://res.cloudinary.com/dvbadeh7n/image/upload/v1787599416/WhatsApp_Image_2026-08-24_at_16.21.51_eqneav.jpg'
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1791402696/4.png'
     ],
     description: 'Arranjo requintado e volumoso de lírios abertos e botões selecionados com folhagem verde brilhante. O presente ideal para celebrar bodas, aniversários ou datas memoráveis.',
     details: [
