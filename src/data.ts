@@ -71,9 +71,8 @@ export const CATALOG: Product[] = [
     category: 'buques',
     available: true,
     tag: 'Delicado',
-    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792836/WhatsApp_Image_2026-06-08_at_13.29.17.jpg',
+    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790793438/WhatsApp_Image_2026-05-22_at_13.08.03_1.jpg',
     images: [
-      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792836/WhatsApp_Image_2026-06-08_at_13.29.17.jpg',
       'https://res.cloudinary.com/uepofhc6/image/upload/v1790793438/WhatsApp_Image_2026-05-22_at_13.08.03_1.jpg',
       'https://res.cloudinary.com/uepofhc6/image/upload/v1790792829/WhatsApp_Image_2026-06-03_at_10.09.59_2.jpg'
     ],
