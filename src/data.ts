@@ -32,7 +32,7 @@ export const CATALOG: Product[] = [
     image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792859/WhatsApp_Image_2026-08-29_at_09.20.48_1.jpg',
     images: [
       'https://res.cloudinary.com/uepofhc6/image/upload/v1790792859/WhatsApp_Image_2026-08-29_at_09.20.48_1.jpg',
-      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792859/WhatsApp_Image_2026-08-24_at_16.21.46.jpg',
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1791402696/7.png',
       'https://res.cloudinary.com/uepofhc6/image/upload/v1790792860/WhatsApp_Image_2026-08-24_at_16.21.50_1.jpg',
       'https://res.cloudinary.com/uepofhc6/image/upload/v1791402700/WhatsApp_Image_2026-10-06_at_16.41.06.jpg'
     ],
