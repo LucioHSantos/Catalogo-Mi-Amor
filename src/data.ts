@@ -199,9 +199,9 @@ export const CATALOG: Product[] = [
     category: 'buques',
     available: true,
     tag: 'Luxo',
-    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792843/WhatsApp_Image_2026-08-29_at_09.20.48.jpg',
+    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1791402696/5.png',
     images: [
-      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792843/WhatsApp_Image_2026-08-29_at_09.20.48.jpg'
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1791402696/5.png'
     ],
     description: 'Uma exuberante homenagem para quem é a sua vida inteira. Combina 12 rosas vermelhas de luxo com 5 girassóis gigantes, folhagens nobres e flores gipsofila de acabamento.',
     details: [
@@ -255,10 +255,10 @@ export const CATALOG: Product[] = [
     category: 'buques',
     available: true,
     tag: 'Sofisticado',
-    image: 'https://res.cloudinary.com/uepofhc6/image/upload/f_auto,q_auto/lirio1',
+    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1792010393/lirio1.png',
     images: [
-      'https://res.cloudinary.com/uepofhc6/image/upload/f_auto,q_auto/lirio1',
-      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792766/lirio2.png'
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1792010393/lirio1.png',
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1792010393/lirio2.png'
     ],
     description: 'Toda a elegância escultural e sofisticação dos lírios em tons suaves de rosa e branco. Um buquê compacto, charmoso e de perfume incrivelmente marcante.',
     details: [
