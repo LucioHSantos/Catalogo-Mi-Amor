@@ -29,11 +29,9 @@ export const CATALOG: Product[] = [
     category: 'buques',
     available: true,
     tag: 'Mais Vendido',
-    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792859/WhatsApp_Image_2026-08-29_at_09.20.48_1.jpg',
+    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1791402696/7.png',
     images: [
-      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792859/WhatsApp_Image_2026-08-29_at_09.20.48_1.jpg',
       'https://res.cloudinary.com/uepofhc6/image/upload/v1791402696/7.png',
-      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792860/WhatsApp_Image_2026-08-24_at_16.21.50_1.jpg',
       'https://res.cloudinary.com/uepofhc6/image/upload/v1791402700/WhatsApp_Image_2026-10-06_at_16.41.06.jpg'
     ],
     description: 'Uma clássica e poderosa declaração de amor com 12 rosas de altíssima qualidade, embaladas harmoniosamente em papel decorativo vermelho texturizado e finalizadas com um lindo laço.',
@@ -117,9 +115,9 @@ export const CATALOG: Product[] = [
     category: 'buques',
     available: true,
     tag: 'Colorido',
-    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790793439/WhatsApp_Image_2026-05-22_at_13.08.04.jpg',
+    image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1791402698/WhatsApp_Image_2026-10-02_at_15.47.08.jpg',
     images: [
-      'https://res.cloudinary.com/uepofhc6/image/upload/v1790793439/WhatsApp_Image_2026-05-22_at_13.08.04.jpg'
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1791402698/WhatsApp_Image_2026-10-02_at_15.47.08.jpg'
     ],
     description: 'Uma maravilhosa explosão de cores e frescor! Mix de flores da estação, crisântemos e margaridas em tons suaves de rosa, branco e lilás com ricas folhagens verdes.',
     details: [
@@ -139,9 +137,7 @@ export const CATALOG: Product[] = [
     tag: 'Super Volumoso',
     image: 'https://res.cloudinary.com/uepofhc6/image/upload/v1790792835/WhatsApp_Image_2026-08-24_at_15.35.24.jpg',
     images: [
-      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792835/WhatsApp_Image_2026-08-24_at_15.35.24.jpg',
-      'https://res.cloudinary.com/uepofhc6/image/upload/v1790793440/WhatsApp_Image_2026-05-22_at_13.08.03_3.jpg',
-      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792840/WhatsApp_Image_2026-08-24_at_16.21.51_1.jpg'
+      'https://res.cloudinary.com/uepofhc6/image/upload/v1790792835/WhatsApp_Image_2026-08-24_at_15.35.24.jpg'
     ],
     description: 'A versão grande, generosa e super volumosa do nosso querido mix de flores do campo. Seleção nobre de flores coloridas da estação para causar uma impressão inesquecível.',
     details: [
